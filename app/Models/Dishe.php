@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Dishe extends Model
 {
     use HasFactory;
+
+    public function type() {
+        return $this->belongsTo(Restaurant::class);
+    }
 }
