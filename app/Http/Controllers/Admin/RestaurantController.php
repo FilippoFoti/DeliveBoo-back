@@ -42,6 +42,9 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+        $restaurant = Restaurant::create($data);
+
         return redirect()->route('admin.restaurants.index')->with('message', '{$restaurant->name} è stato creato');
     }
 
