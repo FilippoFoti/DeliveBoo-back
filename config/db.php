@@ -42,5 +42,59 @@ return [
       "name" => "Wakame",
       "image" => "https://wakameitalia.it/wp-content/uploads/2020/04/riduzione-logo-wakame-selection.png"
     ]
-    ]
-    ];
+  ],
+  "dishes" => [
+    [
+      "name" => "Piatto 1",
+      "visibility" => true,
+      "restaurant_id" => "",
+      "image" => ""
+    ],
+    [
+      "name" => "Piatto 2",
+      "visibility" => true,
+      "restaurant_id" => "",
+      "image" => ""
+    ],
+    [
+      "name" => "Piatto 3",
+      "visibility" => true,
+      "restaurant_id" => "",
+      "image" => ""
+    ],
+    [
+      "name" => "Piatto 4",
+      "visibility" => true,
+      "restaurant_id" => "",
+      "image" => ""
+    ],
+    [
+      "name" => "Piatto 5",
+      "visibility" => true,
+      "restaurant_id" => "",
+      "image" => ""
+    ],
+  ],
+  "types" => [
+    [
+      "name" => "Italiana",
+      "icon" => ""
+    ],
+    [
+      "name" => "Cinese",
+      "icon" => ""
+    ],
+    [
+      "name" => "Giapponese",
+      "icon" => ""
+    ],
+    [
+      "name" => "Messicana",
+      "icon" => ""
+    ],
+    [
+      "name" => "Argentina",
+      "icon" => ""
+    ],
+  ]
+];
