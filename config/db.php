@@ -48,31 +48,53 @@ return [
       "name" => "Piatto 1",
       "visibility" => true,
       "restaurant_id" => "",
-      "image" => "",
+      "image" => ""
     ],
     [
       "name" => "Piatto 2",
       "visibility" => true,
       "restaurant_id" => "",
-      "image" => "",
+      "image" => ""
     ],
     [
       "name" => "Piatto 3",
       "visibility" => true,
       "restaurant_id" => "",
-      "image" => "",
+      "image" => ""
     ],
     [
       "name" => "Piatto 4",
       "visibility" => true,
       "restaurant_id" => "",
-      "image" => "",
+      "image" => ""
     ],
     [
       "name" => "Piatto 5",
       "visibility" => true,
       "restaurant_id" => "",
-      "image" => "",
+      "image" => ""
+    ],
+  ],
+  "types" => [
+    [
+      "name" => "Italiana",
+      "icon" => ""
+    ],
+    [
+      "name" => "Cinese",
+      "icon" => ""
+    ],
+    [
+      "name" => "Giapponese",
+      "icon" => ""
+    ],
+    [
+      "name" => "Messicana",
+      "icon" => ""
+    ],
+    [
+      "name" => "Argentina",
+      "icon" => ""
     ],
   ]
 ];
