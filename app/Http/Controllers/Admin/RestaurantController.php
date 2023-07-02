@@ -16,9 +16,10 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::all();
+        $userId = auth()->id();
+        $restaurants = Restaurant::where("user_id", $userId)->get();
 
-        return view('admin.restaurants.index', compact('restaurants'));
+        return view('admin.dashboard', compact('restaurants'));
     }
 
     /**
@@ -30,7 +31,6 @@ class RestaurantController extends Controller
     {
 
         $types = Type::all();
-
         return view('admin.restaurants.create', compact('types'));
     }
 
@@ -42,10 +42,17 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $restaurant = Restaurant::create($data);
+        $restaurant = new Restaurant();
+        $restaurant->name = $request->input('name');
+        $restaurant->address = $request->input('address');
+        $restaurant->phone = $request->input('phone');
+        $restaurant->image = $request->input('image');
+        $restaurant->vat_number = $request->input('vat_number');
+        $restaurant->user_id = $request->input('user_id');
 
-        return redirect()->route('admin.restaurants.index')->with('message', '{$restaurant->name} è stato creato');
+        $restaurant->save();
+
+        return redirect()->route('admin.dashboard')->with('message', '{$restaurant->name} è stato creato');
     }
 
     /**
