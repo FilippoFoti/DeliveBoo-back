@@ -2,30 +2,31 @@
 
 @section('content')
     {{-- @include('partials.session_message') --}}
-    <h1 class="ps-1 py-3">I tuoi prodotti</h1>
-    <div class="text-end">
-        <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Crea un Piatto</a>
-    </div>
+    <div class="container">
+        <h1 class="pt-3 pb-1 text-center m-0">I tuoi prodotti</h1>
+        <div class="text-end m-3">
+            <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Crea un Piatto</a>
+        </div>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nome piatto</th>
-                <th scope="col">Prezzo</th>
-                <th scope="col">Descrizione</th>
-                <th scope="col">Visibilità</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($dishes as $dishe)
-                <tr class="align-middle">
-                    <th scope="row">{{ $dishe->id }}</th>
-                    <td>{{ $dishe->name }}</td>
-                    <td>{{ $dishe->price }}</td>
-                    <td>{{ $dishe->description }}</td>
-                    <td>{{ $dishe->visibility === 0 ? 'No' : 'Si' }}</td>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">Id</th>
+                    <th scope="col" class="text-center">Nome piatto</th>
+                    <th scope="col" class="text-center">Prezzo</th>
+                    <th scope="col" class="text-center">Descrizione</th>
+                    <th scope="col" class="text-center">Visibilità</th>
+                    <th scope="col" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($dishes as $dishe)
+                    <tr class="align-middle">
+                        <th scope="row" class="text-center">{{ $dishe->id }}</th>
+                        <td class="text-center">{{ $dishe->name }}</td>
+                        <td class="text-center">{{ $dishe->price }}</td>
+                        <td class="text-center w-50">{{ $dishe->description }}</td>
+                        <td class="text-center">{{ $dishe->visibility === 0 ? 'No' : 'Si' }}</td>
 
                         <td class="text-nowrap text-center">
                             <a href="{{ route('admin.dishes.show', $dishe->id) }}" class="btn btn-success">
