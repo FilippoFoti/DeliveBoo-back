@@ -4,7 +4,7 @@
     {{-- @include('partials.session_message') --}}
     <h1 class="ps-1 py-3">I tuoi prodotti</h1>
     <div class="text-end">
-        bottone create
+        <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Crea Piatto</a>
     </div>
 
     <table class="table table-striped">
