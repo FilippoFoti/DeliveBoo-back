@@ -25,7 +25,7 @@
                     <td>{{ $dishe->name }}</td>
                     <td>{{ $dishe->price }}</td>
                     <td>{{ $dishe->description }}</td>
-                    <td>{{ $dishe->visibility }}</td>
+                    <td>{{ $dishe->visibility === 0 ? 'No' : 'Si' }}</td>
 
                     <td class="text-nowrap">
                         <a href="{{ route('admin.dishes.show', $dishe->id) }}" class="btn btn-success">

@@ -38,7 +38,15 @@ class DisheController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dishe = new Dishe();
+        $dishe->name = $request->input('name');
+        $dishe->price = $request->input('price');
+        $dishe->description = $request->input('description');
+        $dishe->visibility = $request->input('is_visible');
+        
+
+        $dishe->save();
+        return redirect()->route('admin.dishes.index')->with('message', '{$dishe->name} è stato creato');
     }
 
     /**
