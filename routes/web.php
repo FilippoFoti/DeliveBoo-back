@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('restaurants', RestaurantController::class );
-    Route::resource('dishes', DisheController::class);
+    Route::resource('dishes', DisheController::class)->parameters(['dishes' => 'dishe:id']);
 });
 
 require __DIR__.'/auth.php';

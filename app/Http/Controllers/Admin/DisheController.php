@@ -90,8 +90,9 @@ class DisheController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dishe $dishe)
     {
-        //
+        $dishe->delete();
+        return redirect()->route('admin.dishes.index')->with('message', "{$dishe->name} è stato cancellato");
     }
 }
