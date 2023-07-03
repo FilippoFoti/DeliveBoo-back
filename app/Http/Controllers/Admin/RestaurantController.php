@@ -41,14 +41,19 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRestaurantRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
-        $data['user_id'] = $request->input('user_id');
-        $restaurant = Restaurant::create($data);
-        
+        $restaurant = new Restaurant();
+        $restaurant->name = $request->input('name');
+        $restaurant->address = $request->input('address');
+        $restaurant->phone = $request->input('phone');
+        $restaurant->image = $request->input('image');
+        $restaurant->vat_number = $request->input('vat_number');
+        $restaurant->user_id = $request->input('user_id');
 
-        return redirect()->route('admin.dashboard')->with('message', '{$restaurant->name} è stato creato');
+        $restaurant->save();
+
+        return redirect()->route('admin.dashboard')->with('message', "{$restaurant->name} è stato creato");
     }
 
     /**
