@@ -15,7 +15,7 @@
                         <p class="card-text">Indirizzo: {{ auth()->user()->restaurant->address }}</p>
                         <p class="card-text">Telefono: {{ auth()->user()->restaurant->phone }}</p>
                         <p class="card-text">P. IVA: {{ auth()->user()->restaurant->vat_number }}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
