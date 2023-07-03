@@ -21,17 +21,17 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control" aria-label="With textarea" id="description" name="description"  rows="5">{{ old('description', $dishe->description) }}"</textarea>
+            <textarea class="form-control" aria-label="With textarea" id="description" name="description"  rows="5">{{ old('description', $dishe->description) }}</textarea>
           </div>
 
         <div class="mb-3">
             <label for="is_visible" class="form-label">Visibile</label>
-            <select id="is_visible" name="is_visible" class="form-select">
-                <option @selected($dishe->visibility == old("$dishe->visibility", $dishe->visibility)) value="{{ $dishe->visibility }}"></option>
-                <option value="">{{ $dishe->visibility === 0 ? 'No' : 'Si' }}</option>
-                <option value="">{{ $dishe->visibility !== 0 ? 'No' : 'Si' }}</option>
+            <select id="is_visible" name="visibility" class="form-select">
+                <option @selected(old('visibility',$dishe->visibility)== 1) value="1">Si</option>
+                <option @selected(old('visibility',$dishe->visibility)== 0) value="0">No</option>
             </select>
         </div>
+        
         
         <button type="submit" class="btn btn-primary mt-3">Salva</button>
         <a href="{{route('admin.dishes.index')}}" class="btn btn-warning mt-3 ms-3">Indietro</a>
