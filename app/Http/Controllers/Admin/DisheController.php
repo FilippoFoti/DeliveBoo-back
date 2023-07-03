@@ -57,7 +57,8 @@ class DisheController extends Controller
      */
     public function show($id)
     {
-        //
+        $dishe = Dishe::findOrFail($id);
+        return view("admin.dishes.show", compact("dishe"));
     }
 
     /**
