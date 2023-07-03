@@ -11,19 +11,21 @@ class Restaurant extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['name', 'address', 'phone', 'image', 'vat_number', 'user_id'];
+    protected $fillable = ['name', 'address', 'phone', 'image', 'vat_number', 'user_id', 'type_id'];
 
-    public function dishes() {
+    public function dishes()
+    {
         return $this->hasMany(Dishe::class);
     }
 
-    public function types() {
+    public function types()
+    {
         return $this->belongsToMany(Type::class);
     }
 
-    public function user(){
+    public function user()
+    {
 
         return $this->belongsTo(User::class);
-    
     }
 }
