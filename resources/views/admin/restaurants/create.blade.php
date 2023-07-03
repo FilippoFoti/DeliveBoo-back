@@ -8,6 +8,9 @@
             <div class="col">
                 <form action="{{ route('admin.restaurants.store') }}" method="POST">
                     @csrf
+
+                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome Attività</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="">
