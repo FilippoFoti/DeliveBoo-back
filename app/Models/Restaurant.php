@@ -11,7 +11,7 @@ class Restaurant extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['name', 'address', 'phone', 'image', 'vat_number'];
+    protected $fillable = ['name', 'address', 'phone', 'image', 'vat_number', 'user_id'];
 
     public function dishes() {
         return $this->hasMany(Dishe::class);

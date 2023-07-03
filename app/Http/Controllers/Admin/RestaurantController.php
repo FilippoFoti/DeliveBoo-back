@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRestaurantRequest;
 
 class RestaurantController extends Controller
 {
@@ -40,17 +41,12 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRestaurantRequest $request)
     {
-        $restaurant = new Restaurant();
-        $restaurant->name = $request->input('name');
-        $restaurant->address = $request->input('address');
-        $restaurant->phone = $request->input('phone');
-        $restaurant->image = $request->input('image');
-        $restaurant->vat_number = $request->input('vat_number');
-        $restaurant->user_id = $request->input('user_id');
-
-        $restaurant->save();
+        $data = $request->validated();
+        $data['user_id'] = $request->input('user_id');
+        $restaurant = Restaurant::create($data);
+        
 
         return redirect()->route('admin.dashboard')->with('message', '{$restaurant->name} è stato creato');
     }
