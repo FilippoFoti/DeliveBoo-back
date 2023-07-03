@@ -1,11 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+    <div class="container mb-0 mt-3">
+        @if (session('message'))
+            <div class="alert alert-success m-0">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
     {{-- @include('partials.session_message') --}}
     <div class="container">
         <h1 class="pt-3 pb-1 text-center m-0">I tuoi prodotti</h1>
@@ -44,7 +46,8 @@
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" class="btn btn-danger btn-delete"
+                                    data-restaurant-title='{{ $dishe->name }}'>
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </form>
@@ -53,5 +56,6 @@
                 @endforeach
             </tbody>
         </table>
+        @include('partials.delete')
     </div>
 @endsection
