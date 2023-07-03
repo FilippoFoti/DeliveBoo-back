@@ -46,7 +46,7 @@ class DisheController extends Controller
         
 
         $dishe->save();
-        return redirect()->route('admin.dishes.index')->with('message', '{$dishe->name} è stato creato');
+        return redirect()->route('admin.dishes.index')->with('message', "{$dishe->name} è stato creato");
     }
 
     /**
@@ -85,7 +85,7 @@ class DisheController extends Controller
         $data = $request->all();
         $dishe = Dishe::findOrFail($id);
         $dishe->update($data);
-        return redirect()->route('admin.dishes.index')->with('message', '{$dishe->name} è stato modificato');
+        return redirect()->route('admin.dishes.index')->with('message', "{$dishe->name} è stato modificato");
     }
 
     /**

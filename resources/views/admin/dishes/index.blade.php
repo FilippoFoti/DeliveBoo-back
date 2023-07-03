@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     {{-- @include('partials.session_message') --}}
     <div class="container">
         <h1 class="pt-3 pb-1 text-center m-0">I tuoi prodotti</h1>
