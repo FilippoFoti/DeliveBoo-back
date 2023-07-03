@@ -69,7 +69,8 @@ class DisheController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dishe = Dishe::findOrFail($id);
+        return view ("admin.dishes.edit", compact("dishe"));
     }
 
     /**
@@ -81,7 +82,10 @@ class DisheController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $dishe = Dishe::findOrFail($id);
+        $dishe->update($data);
+        return redirect()->route('admin.dishes.index')->with('message', '{$dishe->name} è stato modificato');
     }
 
     /**
