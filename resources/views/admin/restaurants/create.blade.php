@@ -6,7 +6,7 @@
     <div class="container mb-4">
         <div class="row">
             <div class="col">
-                <form action="{{ route('admin.restaurants.store') }}" method="POST">
+                <form action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
