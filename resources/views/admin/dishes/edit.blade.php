@@ -16,7 +16,7 @@
 
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="number" class="form-control" id="price" name="price" value="{{ old('price', $dishe->price) }}">
+            <input type="number" min="10" max="100" class="form-control" id="price" name="price" value="{{ old('price', $dishe->price) }}">
         </div>
 
         <div class="mb-3">
