@@ -16,8 +16,10 @@
                     <p class="card-text">Telefono: {{ auth()->user()->restaurant->phone }}</p>
                     <p class="card-text">P. IVA: {{ auth()->user()->restaurant->vat_number }}</p>
                     <p class="card-text">Tipo di cucina:
-                        @foreach (auth()->user()->restaurant->types as $type)
+                        @foreach (auth()->user()->restaurant->types as $key => $type)
                         {{ $type->name }}
+                        @if ($key !== count(auth()->user()->restaurant->types) - 1),
+                        @endif
                         @endforeach
                     </p>
                     <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Menù</a>
