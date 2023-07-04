@@ -1,15 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<!-- @if ($errors->any())
-<div class="container py-3">
-    <ul class="alert alert-danger">
-        @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif -->
+
 <h1 class="text-center py-5">{{ Auth::user()->name }} crea il tuo ristorante</h1>
 
 <div class="container mb-4">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Dishe;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreDisheRequest;
 
 class DisheController extends Controller
 {
@@ -36,7 +37,7 @@ class DisheController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDisheRequest $request)
     {
         $dishe = new Dishe();
         $dishe->name = $request->input('name');
