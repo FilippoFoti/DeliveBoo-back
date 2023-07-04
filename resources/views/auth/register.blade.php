@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" id="registerForm">
                         @csrf
 
                         <div class="mb-4 row">
@@ -78,6 +78,24 @@
                             </div>
                         </div>
                     </form>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const registerForm = document.getElementById('registerForm');
+                    
+                            registerForm.addEventListener('submit', function(event) {
+                                const passwordInput = document.getElementById('password');
+                                const confirmPasswordInput = document.getElementById('password-confirm');
+                    
+                                if (passwordInput.value !== confirmPasswordInput.value) {
+                                    event.preventDefault(); // Blocca l'invio del form
+                                    confirmPasswordInput.setCustomValidity('Le password non coincidono');
+                                }
+                            });
+                        });
+                    </script>
+
+
                 </div>
             </div>
         </div>
