@@ -54,8 +54,9 @@ class RestaurantController extends Controller
 
         $restaurant->save();
         $typeId = $request->input('type_id');
-        $type = Type::where('name', $typeId)->first();
-        if ($type) {
+        $type = Type::findOrFail($typeId);
+
+        if (!$restaurant->types()->where('type_id', $type->id)->exists()) {
             $restaurant->types()->attach($type->id);
         }
 

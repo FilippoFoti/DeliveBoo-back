@@ -30,7 +30,7 @@ class StoreRestaurantRequest extends FormRequest
             'phone' => ['required', 'max:13'],
             'image' => 'nullable',
             'vat_number' => ['required', 'max:200'],
-            'type_id' => 'required'
+            'type_id' => ['required', 'exists:types,id']
         ];
     }
     public function messages()
