@@ -16,7 +16,8 @@
                         <h5 class="mb-3"><span class="fw-bold">Email: </span>{{ Auth::user()->email }}</h5>
                         <h5 class="mb-3"><span class="fw-bold">P.IVA: </span>{{ auth()->user()->restaurant->vat_number }}
                         </h5>
-                        <h5 class="mb-3"><span class="fw-bold">Telefono: </span>{{ auth()->user()->restaurant->phone }}<h5>
+                        <h5 class="mb-3"><span class="fw-bold">Telefono: </span>{{ auth()->user()->restaurant->phone }}</<
+                                /h5>
                     </div>
                 </div>
                 <div class="col">
@@ -26,26 +27,28 @@
                     </h5>
                     <h5 class="mb-3"><span class="fw-bold">Tipo cucina: </span>
                         @foreach (auth()->user()->restaurant->types as $key => $type)
-                            {{ $type->name }}
-                            @if ($key !== count(auth()->user()->restaurant->types) - 1)
-                                ,
-                            @endif
+                        {{ $type->name }}
+                        @if ($key !== count(auth()->user()->restaurant->types) - 1),
+                        @endif
                         @endforeach
-                    </h5>
+                    </p>
                     <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Menù</a>
                 </div>
             </div>
         </div>
-    @else
-        <div class="container">
-            <div class="row">
-                <div class="col py-4">
-                    <div class="text-center">
-                        <h1>Registra il tuo ristorante</h1>
-                        <a href="{{ route('admin.restaurants.create') }}" class="btn btn-success">Nuovo ristorante</a>
-                    </div>
-                </div>
+    </div>
+</div>
+@else
+<div class="container">
+    <div class="row">
+        <div class="col py-4">
+            <div class="text-center">
+                <h1>Registra il tuo ristorante</h1>
+                <a href="{{ route('admin.restaurants.create') }}" class="btn btn-success">Nuovo ristorante</a>
             </div>
         </div>
-    @endif
+    </div>
+</div>
+@endif
+
 @endsection
