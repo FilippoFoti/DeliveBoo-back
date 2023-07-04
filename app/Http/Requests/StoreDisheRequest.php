@@ -36,11 +36,11 @@ class StoreDisheRequest extends FormRequest
             'name.required' => 'Il nome del piatto è obbligatorio',
             'name.max' => 'Il nome del piatto è troppo lungo',
             'name.min' => 'Il nome del piatto è troppo corto. Deve contenere almeno 5 caratteri',
-            'price.required' => 'il prezzo deve essere indicato',
-            'price.max' => 'il prezzo è troppo alto',
-            'price.numeric' => 'il prezzo deve corrispondere a un numero',
-            'description.required' => 'la descrizione è obbligatoria',
-            'visibility.required' => 'la visibilità è obbligatoria',
+            'price.required' => 'Il prezzo deve essere indicato',
+            'price.max' => 'Il prezzo è troppo alto',
+            'price.numeric' => 'Il prezzo deve corrispondere a un numero',
+            'description.required' => 'La descrizione è obbligatoria',
+            'is_visible.required' => 'La visibilità è obbligatoria',
 
         ];
     }
