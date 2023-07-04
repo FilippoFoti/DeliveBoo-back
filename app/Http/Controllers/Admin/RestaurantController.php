@@ -41,7 +41,7 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRestaurantRequest $request)
     {
         $restaurant = new Restaurant();
         $restaurant->name = $request->input('name');
@@ -52,6 +52,11 @@ class RestaurantController extends Controller
         $restaurant->user_id = $request->input('user_id');
 
         $restaurant->save();
+        $typeId = $request->input('type_id');
+        $type = Type::where('name', $typeId)->first();
+        if ($type) {
+            $restaurant->types()->attach($type->id);
+        }
 
         return redirect()->route('admin.dashboard')->with('message', "{$restaurant->name} è stato creato");
     }
