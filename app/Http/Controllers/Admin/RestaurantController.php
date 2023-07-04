@@ -7,6 +7,7 @@ use App\Models\Restaurant;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRestaurantRequest;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
@@ -17,7 +18,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $userId = auth()->id();
+        $userId = Auth::user()->id;
         $restaurants = Restaurant::where("user_id", $userId)->get();
 
         return view('admin.dashboard', compact('restaurants'));

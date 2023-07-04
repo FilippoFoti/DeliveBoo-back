@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Dishe;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDisheRequest;
+use App\Models\Restaurant;
+use Illuminate\Support\Facades\Auth;
 
 class DisheController extends Controller
 {
@@ -16,7 +18,7 @@ class DisheController extends Controller
      */
     public function index()
     {
-        $dishes = Dishe::all();
+        $dishes = Dishe::where('restaurant_id', Auth::user()->restaurant->id)->get();
 
         return view('admin.dishes.index', compact('dishes'));
     }
@@ -39,7 +41,10 @@ class DisheController extends Controller
      */
     public function store(StoreDisheRequest $request)
     {
+        $userId = Auth::user()->id;
+        $id_restaurant = Restaurant::findOrFail($userId)->id;
         $dishe = new Dishe();
+        $dishe->restaurant_id = $id_restaurant;
         $dishe->name = $request->input('name');
         $dishe->price = $request->input('price');
         $dishe->description = $request->input('description');
