@@ -1,42 +1,52 @@
 @extends('layouts.admin')
 
 @section('content')
-
-@if(auth()->user()->restaurant)
-<h1 class="text-center pt-5 pb-3">Benvenuto {{ Auth::user()->name }}</h1>
-<h3 class="text-center pb-3">Il tuo ristorante</h3>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Nome: {{ auth()->user()->restaurant->name }}</h5>
-                    <p class="card-text">Indirizzo: {{ auth()->user()->restaurant->address }}</p>
-                    <p class="card-text">Telefono: {{ auth()->user()->restaurant->phone }}</p>
-                    <p class="card-text">P. IVA: {{ auth()->user()->restaurant->vat_number }}</p>
-                    <p class="card-text">Tipo di cucina:
-                        @foreach (auth()->user()->restaurant->types as $type)
-                        {{ $type->name }}
+    @if (auth()->user()->restaurant)
+        <h1 class="text-center my-3">Benvenuto {{ Auth::user()->name }}</h1>
+        <div class="container">
+            <div class="row border rounded p-4">
+                <div class="col">
+                    <figure>
+                        <img src="" alt="Ristorante">
+                    </figure>
+                </div>
+                <div class="col">
+                    <div class="div">
+                        <h5 class="mb-3"><span class="fw-bold">Nome Ristoratore: </span>{{ Auth::user()->name }}</h5>
+                        <h5 class="mb-3"><span class="fw-bold">Email: </span>{{ Auth::user()->email }}</h5>
+                        <h5 class="mb-3"><span class="fw-bold">P.IVA: </span>{{ auth()->user()->restaurant->vat_number }}
+                        </h5>
+                        <h5 class="mb-3"><span class="fw-bold">Telefono: </span>{{ auth()->user()->restaurant->phone }}</<
+                                /h5>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5 class="mb-3"><span class="fw-bold">Nome Ristorante: </span>{{ auth()->user()->restaurant->name }}
+                    </h5>
+                    <h5 class="mb-3"><span class="fw-bold">Indirizzo: </span>{{ auth()->user()->restaurant->address }}
+                    </h5>
+                    <h5 class="mb-3"><span class="fw-bold">Tipo cucina: </span>
+                        @foreach (auth()->user()->restaurant->types as $key => $type)
+                            {{ $type->name }}
+                            @if ($key !== count(auth()->user()->restaurant->types) - 1)
+                                ,
+                            @endif
                         @endforeach
-                    </p>
+                    </h5>
                     <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Menù</a>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@else
-<div class="container">
-    <div class="row">
-        <div class="col py-4">
-            <div class="text-center">
-                <h1>Registra il tuo ristorante</h1>
-                <a href="{{ route('admin.restaurants.create') }}" class="btn btn-success">Nuovo ristorante</a>
+    @else
+        <div class="container">
+            <div class="row">
+                <div class="col py-4">
+                    <div class="text-center">
+                        <h1>Registra il tuo ristorante</h1>
+                        <a href="{{ route('admin.restaurants.create') }}" class="btn btn-success">Nuovo ristorante</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-@endif
-
+    @endif
 @endsection

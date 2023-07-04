@@ -53,12 +53,10 @@ class RestaurantController extends Controller
         $restaurant->user_id = $request->input('user_id');
 
         $restaurant->save();
-        $typeId = $request->input('type_id');
-        $type = Type::findOrFail($typeId);
+        $typeIds = $request->input('type_id');
+        $types = Type::whereIn('id', $typeIds)->get();
 
-        if (!$restaurant->types()->where('type_id', $type->id)->exists()) {
-            $restaurant->types()->attach($type->id);
-        }
+        $restaurant->types()->sync($types);
 
         return redirect()->route('admin.dashboard')->with('message', "{$restaurant->name} è stato creato");
     }
