@@ -27,7 +27,7 @@ class StoreDisheRequest extends FormRequest
             'name' => ['required', 'max:30', 'min:5'],
             'price' => ['required', 'max:100.00', 'numeric'],
             'description' => ['required'],
-            'visibility' => ['required'],
+            'is_visible' => ['required'],
         ];
     }
     public function messages()
@@ -36,7 +36,7 @@ class StoreDisheRequest extends FormRequest
             'name.required' => 'Il nome del piatto è obbligatorio',
             'name.max' => 'Il nome del piatto è troppo lungo',
             'name.min' => 'Il nome del piatto è troppo corto. Deve contenere almeno 5 caratteri',
-            'price.required'=> 'il prezzo deve essere indicato',
+            'price.required' => 'il prezzo deve essere indicato',
             'price.max' => 'il prezzo è troppo alto',
             'price.numeric' => 'il prezzo deve corrispondere a un numero',
             'description.required' => 'la descrizione è obbligatoria',
