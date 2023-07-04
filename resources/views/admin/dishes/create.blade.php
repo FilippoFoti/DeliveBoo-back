@@ -11,29 +11,50 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Nome piatto</label>
-                <input type="text" class="form-control" id="name" name="name"
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     placeholder="Inserisci il nome del piatto">
+                    @error('name')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
             </div>
 
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input type="number" class="form-control" id="price" name="price" placeholder="Inserire prezzo">
+                <input type="number" class="form-control
+                @error('price') is-invalid @enderror" id="price" name="price">
+                @error('price')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
-                <textarea class="form-control" aria-label="With textarea" id="description" name="description"
-                    placeholder="Inserisci la descrizione" rows="5"></textarea>
+                <textarea class="form-control @error('description') is-invalid @enderror" aria-label="With textarea" id="description" name="description"
+                    rows="5"></textarea>
+                    @error('description')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
             </div>
 
             <div class="mb-3">
-                <label for="is_visible" class="form-label">Visibile</label>
+                <label for="is_visible" class="form-label @error('is_visible') is-invalid @enderror">Visibile</label>
                 <select id="is_visible" name="is_visible" class="form-select">
 
                     <option value="1">Si</option>
                     <option value="0">No</option>
 
                 </select>
+                @error('is_visible')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <button type="submit" class="btn btn-primary mt-3">Salva</button>
