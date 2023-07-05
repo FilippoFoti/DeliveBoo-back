@@ -13,7 +13,7 @@
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Nome Attività *</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required minlength="2" maxlength="50">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required minlength="2" maxlength="50" placeholder="Insersci il nome del ristorante">
                     @error('name')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="address" class="form-label">Indirizzo *</label>
-                    <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" required minlength="5" maxlength="100">
+                    <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" required minlength="5" maxlength="100" placeholder="Insersci la città del ristorante">
                     @error('address')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -31,7 +31,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Telefono *</label>
-                    <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required maxlength="10">
+                    <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required maxlength="10" placeholder="0123456789">
                     @error('phone')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -45,8 +45,8 @@
                 <div class="mb-3">
                     <label for="vat_number" class="form-label">P. IVA *</label>
                     <div class="input-group">
-                        <span class="input-group-text">IT</span>
-                        <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}" required maxlength="11" pattern="[0-9]+">
+                        <!-- <span class="input-group-text">IT</span> -->
+                        <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}" required maxlength="13" placeholder="01234567890">
                     </div>
                     @error('vat_number')
                     <div class="invalid-feedback">
