@@ -27,7 +27,7 @@ class UpdateDisheRequest extends FormRequest
             'name' => ['required', 'max:30', 'min:5'],
             'price' => ['required', 'numeric', 'between:1, 25'],
             'description' => ['required'],
-            'is_visible' => ['required', 'boolean'],
+            'visibility' => ['required', 'boolean'],
         ];
     }
     public function messages()
@@ -40,8 +40,8 @@ class UpdateDisheRequest extends FormRequest
             'price.numeric' => 'Il prezzo deve essere un valore numerico.',
             'price.between' => 'Il prezzo deve essere compreso tra 1 € e 25€.',
             'description.required' => 'La descrizione è obbligatoria.',
-            'is_visible.required' => 'La visibilità è obbligatoria.',
-            'is_visible.boolean' => 'Il valore di visibilità deve essere vero o falso.',
+            'visibility.required' => 'La visibilità è obbligatoria.',
+            'visibility.boolean' => 'Il valore di visibilità deve essere vero o falso.',
         ];
     }
 }

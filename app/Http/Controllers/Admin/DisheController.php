@@ -65,13 +65,13 @@ class DisheController extends Controller
     public function show($id)
     {
         $dishe = Dishe::findOrFail($id);
-        
+
         $userId = Auth::user()->id;
         $restaurant_id = Dishe::findOrFail($id)->restaurant_id;
         if ($userId === $restaurant_id) {
             return view("admin.dishes.show", compact("dishe"));
         } else {
-            return redirect()->route("admin.dashboard")->with("message", "Non puoi accedere");
+            return redirect()->route("admin.dashboard")->with("message", "Non puoi visualizzare questo piatto, non fa parte del tuo ristorante");
         }
     }
 
@@ -84,7 +84,13 @@ class DisheController extends Controller
     public function edit($id)
     {
         $dishe = Dishe::findOrFail($id);
-        return view("admin.dishes.edit", compact("dishe"));
+        $userId = Auth::user()->id;
+        $restaurant_id = Dishe::findOrFail($id)->restaurant_id;
+        if ($userId === $restaurant_id) {
+            return view("admin.dishes.edit", compact("dishe"));
+        } else {
+            return redirect()->route("admin.dashboard")->with("message", "Non puoi modificare questo piatto, non fa parte del tuo ristorante");
+        }
     }
 
     /**
