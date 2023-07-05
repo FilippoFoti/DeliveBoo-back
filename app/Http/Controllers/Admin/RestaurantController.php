@@ -31,9 +31,12 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-
         $types = Type::all();
-        return view('admin.restaurants.create', compact('types'));
+        if (Auth::user()->restaurant) {
+            return redirect()->route('admin.dashboard')->with('message', "Hai già un ristorante");
+        } else {
+            return view('admin.restaurants.create', compact('types'));
+        }
     }
 
     /**
