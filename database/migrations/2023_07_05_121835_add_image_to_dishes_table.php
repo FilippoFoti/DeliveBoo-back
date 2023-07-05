@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('dishes', function (Blueprint $table) {
-            $table->string('image')->after('visibility');
+            $table->string('image')->after('visibility')->nullable();
         });
     }
 

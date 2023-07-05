@@ -39,13 +39,8 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Immagine *</label>
+                    <label for="image" class="form-label">Immagine</label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="">
-                    @error('image')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="vat_number" class="form-label">PIVA *</label>

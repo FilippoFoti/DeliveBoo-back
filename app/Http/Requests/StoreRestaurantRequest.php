@@ -28,7 +28,7 @@ class StoreRestaurantRequest extends FormRequest
             'name' => ['required', 'max:50', Rule::unique('restaurants')],
             'address' => ['required', 'max:100'],
             'phone' => ['required', 'max:20'],
-            'image' => 'required',
+            'image' => 'nullable',
             'vat_number' => ['required', 'max:200', Rule::unique('restaurants')],
             'type_id' => ['required', 'exists:types,id']
         ];
@@ -43,7 +43,6 @@ class StoreRestaurantRequest extends FormRequest
             'address.max' => 'L\'indirizzo del ristorante è troppo lungo',
             'phone.required' => 'Il numero di telefono del ristorante è obbligatorio',
             'phone.max' => 'Il numero di telefono del ristorante è troppo lungo',
-            'image.required' => 'L\'immagine del ristorante è obbligatoria',
             'vat_number.required' => 'La partita IVA del ristorante è obbligatoria',
             'vat_number.max' => 'La partita IVA del ristorante è troppo lunga',
             'vat_number.unique' => 'La partita IVA è già in uso',
