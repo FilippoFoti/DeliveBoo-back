@@ -66,6 +66,34 @@
                         {{ $message }}
                     </div>
                     @enderror
+                    <div id="type-error" class="invalid-feedback d-block"></div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const checkboxes = document.querySelectorAll('input[name="type_id[]"]');
+                            const maxAllowed = 3; // Massimo numero di caselle di controllo consentite
+                            let checkedCount = 0;
+                    
+                            checkboxes.forEach(function(checkbox) {
+                                checkbox.addEventListener('change', function() {
+                                    if (this.checked) {
+                                        checkedCount++;
+                                    } else {
+                                        checkedCount--;
+                                    }
+                    
+                                    if (checkedCount > maxAllowed) {
+                                        this.checked = false;
+                                        checkedCount--;
+                                        document.getElementById('type-error').textContent = 'Puoi selezionare al massimo ' + maxAllowed + ' tipi.';
+                                    } else {
+                                        document.getElementById('type-error').textContent = '';
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+
                 </div>
 
                 <button class="btn btn-primary" type="submit">Invia</button>
