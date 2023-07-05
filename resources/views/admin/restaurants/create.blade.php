@@ -35,7 +35,7 @@
                         <label for="phone" class="form-label">Telefono *</label>
                         <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone"
                             name="phone" value="{{ old('phone') }}" required
-                            pattern="^(\+39|0039)?\s?\d{2,4}?\s?\d{2,4}?\s?\d{2,4}?\s?\d{2,4}$">
+                            pattern="^\+39\d{10}$" maxlength="13">
                         @error('phone')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -121,6 +121,7 @@
                             obbligatori</p>
                         <p class="m-0 fw-bold">Nota:</p>
                         <p>E' necessario selezionare almeno una tipologia e massimo tre</p>
+                        <p>Il numero di telefono deve contenere +39 senza spazi</p>
                     </div>
                 </form>
             </div>
