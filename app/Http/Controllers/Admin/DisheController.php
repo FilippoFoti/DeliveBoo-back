@@ -42,15 +42,14 @@ class DisheController extends Controller
      */
     public function store(StoreDisheRequest $request)
     {
-        $userId = Auth::user()->id;
-        $id_restaurant = Restaurant::findOrFail($userId)->id;
+        // $userId = Auth::user()->id;
+        // $id_restaurant = Restaurant::findOrFail($userId)->id;
         $dishe = new Dishe();
-        $dishe->restaurant_id = $id_restaurant;
+        $dishe->restaurant_id = Auth::user()->restaurant->id;
         $dishe->name = $request->input('name');
         $dishe->price = $request->input('price');
         $dishe->description = $request->input('description');
         $dishe->visibility = $request->input('is_visible');
-
 
         $dishe->save();
         return redirect()->route('admin.dishes.index')->with('message', "{$dishe->name} è stato creato");
