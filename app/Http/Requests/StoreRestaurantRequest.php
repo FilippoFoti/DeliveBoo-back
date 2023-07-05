@@ -27,7 +27,7 @@ class StoreRestaurantRequest extends FormRequest
         return [
             'name' => ['required', 'max:50', Rule::unique('restaurants')],
             'address' => ['required', 'max:100'],
-            'phone' => ['required', 'max:20'],
+            'phone' => ['required', 'max:15'],
             'image' => 'nullable',
             'vat_number' => ['required', 'max:13', Rule::unique('restaurants')],
             'type_id' => ['required', 'exists:types,id']
