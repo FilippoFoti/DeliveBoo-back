@@ -60,8 +60,6 @@
         <div class="alert alert-warning mt-5">
             <p class="text-decoration-underline fw-bold">Tutti i campi contrassegnati con * sono
                 obbligatori</p>
-            <p class="m-0 fw-bold">Nota:</p>
-            <p>Di default il piatto sarà visibile</p>
         </div>
     </form>
 

@@ -43,8 +43,8 @@
                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="">
                 </div>
                 <div class="mb-3">
-                    <label for="vat_number" class="form-label">PIVA *</label>
-                    <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}">
+                    <label for="vat_number" class="form-label">P. IVA *</label>
+                    <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}" required maxlength="13">
                     @error('vat_number')
                     <div class="invalid-feedback">
                         {{ $message }}

@@ -29,7 +29,7 @@ class StoreRestaurantRequest extends FormRequest
             'address' => ['required', 'max:100'],
             'phone' => ['required', 'max:20'],
             'image' => 'nullable',
-            'vat_number' => ['required', 'max:200', Rule::unique('restaurants')],
+            'vat_number' => ['required', 'max:13', Rule::unique('restaurants')],
             'type_id' => ['required', 'exists:types,id']
         ];
     }
