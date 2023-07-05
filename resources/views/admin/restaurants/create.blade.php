@@ -44,7 +44,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="vat_number" class="form-label">P. IVA *</label>
-                    <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}" required maxlength="13">
+                    <div class="input-group">
+                        <span class="input-group-text">IT</span>
+                        <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}" required maxlength="11" pattern="[0-9]+">
+                    </div>
                     @error('vat_number')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -136,7 +139,6 @@
                         obbligatori</p>
                     <p class="m-0 fw-bold">Nota:</p>
                     <p>E' necessario selezionare almeno una tipologia e massimo tre</p>
-                    <p>Il numero di telefono deve contenere +39 senza spazi</p>
                 </div>
             </form>
         </div>
