@@ -8,6 +8,7 @@ use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRestaurantRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -51,9 +52,12 @@ class RestaurantController extends Controller
         $restaurant->name = $request->input('name');
         $restaurant->address = $request->input('address');
         $restaurant->phone = $request->input('phone');
-        $restaurant->image = $request->input('image');
         $restaurant->vat_number = $request->input('vat_number');
         $restaurant->user_id = $request->input('user_id');
+        if ($request->hasFile('image')) {
+            $path = Storage::disk('public')->put('restaurantImg', $request->image);
+            $restaurant->image = $path;
+        }
 
         $restaurant->save();
         $typeIds = $request->input('type_id');
