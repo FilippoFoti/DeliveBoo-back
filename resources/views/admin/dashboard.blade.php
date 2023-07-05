@@ -14,16 +14,15 @@
     <div class="row border rounded p-4">
         <div class="col">
             <figure>
-                <img src="" alt="Ristorante">
+                <img src="{{asset('storage/' . auth()->user()->restaurant->image)}}" alt="Ristorante">
             </figure>
         </div>
         <div class="col">
             <div class="div">
                 <h5 class="mb-3"><span class="fw-bold">Nome Ristoratore: </span>{{ Auth::user()->name }}</h5>
                 <h5 class="mb-3"><span class="fw-bold">Email: </span>{{ Auth::user()->email }}</h5>
-                <h5 class="mb-3"><span class="fw-bold">P.IVA: </span>{{ auth()->user()->restaurant->vat_number }}
-                </h5>
-                <h5 class="mb-3"><span class="fw-bold">Telefono: </span>{{ auth()->user()->restaurant->phone }}</< /h5>
+                <h5 class="mb-3"><span class="fw-bold">P.IVA: </span>{{ auth()->user()->restaurant->vat_number }}</h5>
+                <h5 class="mb-3"><span class="fw-bold">Telefono: </span>{{ auth()->user()->restaurant->phone }}</h5>
             </div>
         </div>
         <div class="col">
