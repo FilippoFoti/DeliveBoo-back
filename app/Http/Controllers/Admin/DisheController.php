@@ -65,7 +65,14 @@ class DisheController extends Controller
     public function show($id)
     {
         $dishe = Dishe::findOrFail($id);
-        return view("admin.dishes.show", compact("dishe"));
+        
+        $userId = Auth::user()->id;
+        $restaurant_id = Dishe::findOrFail($id)->restaurant_id;
+        if ($userId === $restaurant_id) {
+            return view("admin.dishes.show", compact("dishe"));
+        } else {
+            return redirect()->route("admin.dashboard")->with("message", "Non puoi accedere");
+        }
     }
 
     /**
