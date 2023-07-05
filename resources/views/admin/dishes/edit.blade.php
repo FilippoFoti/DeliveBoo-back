@@ -11,7 +11,7 @@
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Nome piatto</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id=" name" name="name" value="{{ old('name', $dishe->name) }}">
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id=" name" name="name" value="{{ old('name', $dishe->name) }}" required minlength="5" maxlength="30">
             @error('name')
             <div class="invalid-feedback">
                 {{$message}}
@@ -21,7 +21,7 @@
 
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="number" min="10" max="100" class="form-control
+            <input type="number" required min="1" max="100" class="form-control
                 @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price', $dishe->price) }}">
             @error('price')
             <div class="invalid-feedback">
