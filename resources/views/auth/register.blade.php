@@ -84,6 +84,14 @@
                                         name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
+                            
+                            <div class="mb-4 row mb-0 my-4">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
+                            </div>
 
                             <div class="alert alert-warning">
                                 <p class="text-decoration-underline fw-bold">Tutti i campi contrassegnati con * sono
@@ -91,14 +99,6 @@
                                 <p class="m-0 fw-bold">Nota:</p>
                                 <p>Il Nome e Cognome devono contenere solo lettere minuscole e maiuscole senza spazi o
                                     caratteri speciali</p>
-                            </div>
-
-                            <div class="mb-4 row mb-0 my-4">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
                             </div>
                         </form>
 
