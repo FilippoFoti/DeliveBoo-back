@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Dishe;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDisheRequest;
+use App\Http\Requests\UpdateDisheRequest;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
 
@@ -49,7 +50,7 @@ class DisheController extends Controller
         $dishe->price = $request->input('price');
         $dishe->description = $request->input('description');
         $dishe->visibility = $request->input('is_visible');
-        
+
 
         $dishe->save();
         return redirect()->route('admin.dishes.index')->with('message', "{$dishe->name} è stato creato");
@@ -76,7 +77,7 @@ class DisheController extends Controller
     public function edit($id)
     {
         $dishe = Dishe::findOrFail($id);
-        return view ("admin.dishes.edit", compact("dishe"));
+        return view("admin.dishes.edit", compact("dishe"));
     }
 
     /**
@@ -86,11 +87,12 @@ class DisheController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateDisheRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $dishe = Dishe::findOrFail($id);
         $dishe->update($data);
+        // dd($dishe);
         return redirect()->route('admin.dishes.index')->with('message', "{$dishe->name} è stato modificato");
     }
 
