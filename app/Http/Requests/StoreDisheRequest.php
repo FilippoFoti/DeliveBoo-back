@@ -28,6 +28,7 @@ class StoreDisheRequest extends FormRequest
             'price' => ['required', 'max:100.00', 'numeric'],
             'description' => ['required'],
             'is_visible' => ['required'],
+            'image' => ['required']
         ];
     }
     public function messages()
@@ -41,6 +42,7 @@ class StoreDisheRequest extends FormRequest
             'price.numeric' => 'Il prezzo deve corrispondere a un numero',
             'description.required' => 'La descrizione è obbligatoria',
             'is_visible.required' => 'La visibilità è obbligatoria',
+            'image.required' => 'L\'immagine del piatto è obbligatoria'
 
         ];
     }

@@ -9,13 +9,15 @@ class Dishe extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'price', 'description', 'visibility'];
+    protected $fillable = ['name', 'price', 'description', 'visibility', 'image'];
 
-    public function restaurants() {
+    public function restaurants()
+    {
         return $this->belongsTo(Restaurant::class);
     }
 
-    public function orders() {
+    public function orders()
+    {
         return $this->belongsToMany(Order::class);
     }
 }

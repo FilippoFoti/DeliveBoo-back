@@ -9,6 +9,7 @@ use App\Http\Requests\StoreDisheRequest;
 use App\Http\Requests\UpdateDisheRequest;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DisheController extends Controller
 {
@@ -50,6 +51,10 @@ class DisheController extends Controller
         $dishe->price = $request->input('price');
         $dishe->description = $request->input('description');
         $dishe->visibility = $request->input('is_visible');
+        if ($request->hasFile('image')) {
+            $path = Storage::disk('public')->put('disheImg', $request->image);
+            $dishe->image = $path;
+        }
 
         $dishe->save();
         return redirect()->route('admin.dishes.index')->with('message', "{$dishe->name} è stato creato");
