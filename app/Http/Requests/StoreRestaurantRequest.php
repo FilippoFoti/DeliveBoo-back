@@ -46,7 +46,7 @@ class StoreRestaurantRequest extends FormRequest
             'vat_number.required' => 'La partita IVA del ristorante è obbligatoria',
             'vat_number.max' => 'La partita IVA del ristorante è troppo lunga',
             'vat_number.unique' => 'La partita IVA è già in uso',
-            'type.required' => 'Il tipo di cucina è obbligatorio'
+            'type_id.required' => 'Il tipo di cucina è obbligatorio'
         ];
     }
 }
