@@ -27,7 +27,7 @@ class StoreRestaurantRequest extends FormRequest
         return [
             'name' => ['required', 'max:50', Rule::unique('restaurants')],
             'address' => ['required', 'max:100'],
-            'phone' => ['required', 'max:13'],
+            'phone' => ['required', 'max:20'],
             'image' => 'nullable',
             'vat_number' => ['required', 'max:200', Rule::unique('restaurants')],
             'type_id' => ['required', 'exists:types,id']
@@ -46,7 +46,7 @@ class StoreRestaurantRequest extends FormRequest
             'vat_number.required' => 'La partita IVA del ristorante è obbligatoria',
             'vat_number.max' => 'La partita IVA del ristorante è troppo lunga',
             'vat_number.unique' => 'La partita IVA è già in uso',
-            'type.required' => 'Il tipo di cucina è obbligatorio'
+            'type_id.required' => 'Il tipo di cucina è obbligatorio'
         ];
     }
 }
