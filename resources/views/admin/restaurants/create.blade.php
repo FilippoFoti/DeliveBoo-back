@@ -13,7 +13,7 @@
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Nome Attività *</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required minlength="2" maxlength="50">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required minlength="2" maxlength="50" placeholder="Insersci il nome del ristorante">
                     @error('name')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="address" class="form-label">Indirizzo *</label>
-                    <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" required minlength="5" maxlength="100">
+                    <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" required minlength="5" maxlength="100" placeholder="Insersci la città del ristorante">
                     @error('address')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -31,7 +31,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Telefono *</label>
-                    <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required maxlength="10">
+                    <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}" required maxlength="10" placeholder="0123456789">
                     @error('phone')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -44,7 +44,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="vat_number" class="form-label">P. IVA *</label>
-                    <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}" required maxlength="13">
+                    <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}" required maxlength="13" placeholder="IT01234567890">
                     @error('vat_number')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -55,7 +55,7 @@
                     <p>Seleziona il tipo</p>
                     @foreach ($types as $type)
                     <div class="form-check">
-                        <input class="form-check-input @error('type_id') is-invalid @enderror" name="type_id[]" type="checkbox" value="{{ $type->id }}" id="type-{{ $type->id }}" @checked(in_array($type->id, old('type_id', [])))>
+                        <input class="form-check-input" name="type_id[]" type="checkbox" value="{{ $type->id }}" id="type-{{ $type->id }}">
                         <label class="form-check-label" for="type-{{ $type->id }}">
                             {{ $type->name }}
                         </label>
@@ -67,6 +67,8 @@
                     </div>
                     @enderror
                     <div id="type-error" class="invalid-feedback d-block"></div>
+
+
 
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
@@ -134,7 +136,6 @@
                         obbligatori</p>
                     <p class="m-0 fw-bold">Nota:</p>
                     <p>E' necessario selezionare almeno una tipologia e massimo tre</p>
-                    <p>Il numero di telefono deve contenere +39 senza spazi</p>
                 </div>
             </form>
         </div>

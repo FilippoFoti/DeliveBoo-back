@@ -65,7 +65,7 @@ class RestaurantController extends Controller
 
         $restaurant->types()->sync($types);
 
-        return redirect()->route('admin.dashboard')->with('message', "{$restaurant->name} è stato creato");
+        return redirect()->route('admin.dashboard')->with('message', "{$restaurant->name} è stato creato!");
     }
 
     /**
