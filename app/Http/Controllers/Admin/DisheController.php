@@ -75,7 +75,7 @@ class DisheController extends Controller
         if ($userId === $restaurant_id) {
             return view("admin.dishes.show", compact("dishe"));
         } else {
-            return redirect()->route("admin.dashboard")->with("message", "Non puoi visualizzare questo piatto, non fa parte del tuo ristorante");
+            return redirect()->route("admin.dashboard")->with("message", "Non puoi visualizzare questo piatto, non fa parte del menù del tuo ristorante");
         }
     }
 
