@@ -18,9 +18,11 @@
         @foreach ($dishes as $dishe)
         <div class="col pb-3">
             <div class="card">
-                <img src="{{ asset('storage/' . $dishe->image) }}" alt="Piatto">
+                <figure class="m-0 p-3 pb-0">
+                    <img class="w-100" src="{{ asset('storage/' . $dishe->image) }}" alt="{{ $dishe->name }}">
+                </figure>
                 <div class="card-body">
-                    <h5 class="card-title"><span class="fw-bold">Nome del piatto: </span> {{ $dishe->name }}</h5>
+                    <h5 class="card-title mb-3"><span class="fw-bold">Nome del piatto: </span> {{ $dishe->name }}</h5>
                     <div class="card-text">
                         <a href="{{ route('admin.dishes.show', $dishe->id) }}" class="btn btn-success">
                             <i class="fa-solid fa-eye"></i> Dettagli
