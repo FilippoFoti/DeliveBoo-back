@@ -41,8 +41,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="is_visible" class="form-label @error('is_visible') is-invalid @enderror">Visibile</label>>
-            <select id="is_visible" name="is_visible" class="form-select">
+            <label for="is_visible" class="form-label @error('is_visible') is-invalid @enderror">Visibile</label>
+            <select id="is_visible" name="visibility" class="form-select">
                 <option @selected(old('visibility',$dishe->visibility)== 1) value="1">Si</option>
                 <option @selected(old('visibility',$dishe->visibility)== 0) value="0">No</option>
             </select>
