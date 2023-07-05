@@ -10,7 +10,7 @@
         @method('PUT')
         @csrf
         <div class="mb-3">
-            <label for="name" class="form-label">Nome piatto</label>
+            <label for="name" class="form-label">Nome piatto *</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id=" name" name="name" value="{{ old('name', $dishe->name) }}" required minlength="5" maxlength="30">
             @error('name')
             <div class="invalid-feedback">
@@ -20,7 +20,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Prezzo</label>
+            <label for="price" class="form-label">Prezzo *</label>
             <input type="number" required min="1" max="100" class="form-control
                 @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price', $dishe->price) }}">
             @error('price')
@@ -31,8 +31,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control @error('description') is-invalid @enderror" aria-label="With textarea" id="description" name="description" rows="5">{{ old('description', $dishe->description) }}</textarea>
+            <label for="description" class="form-label">Descrizione *</label>
+            <textarea class="form-control @error('description') is-invalid @enderror" aria-label="With textarea" id="description" name="description" rows="5" required>{{ old('description', $dishe->description) }}</textarea>
             @error('description')
             <div class="invalid-feedback">
                 {{$message}}
@@ -56,6 +56,13 @@
 
         <button type="submit" class="btn btn-primary mt-3">Salva</button>
         <a href="{{route('admin.dishes.index')}}" class="btn btn-warning mt-3 ms-3">Indietro</a>
+
+        <div class="alert alert-warning mt-5">
+            <p class="text-decoration-underline fw-bold">Tutti i campi contrassegnati con * sono
+                obbligatori</p>
+            <p class="m-0 fw-bold">Nota:</p>
+            <p>Di default il piatto sarà visibile</p>
+        </div>
     </form>
 
 </div>
