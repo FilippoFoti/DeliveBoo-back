@@ -23,6 +23,13 @@
                 </figure>
                 <div class="card-body">
                     <h5 class="card-title mb-3"><span class="fw-bold">Nome del piatto: </span> {{ $dishe->name }}</h5>
+                    <h5 class="card-title mb-3"><span class="fw-bold">Visibilità: </span>
+                        @if($dishe->visibility === 1)
+                        Si
+                        @else($dishe->visibility === 2)
+                        No
+                        @endif
+                    </h5>
                     <div class="card-text">
                         <a href="{{ route('admin.dishes.show', $dishe->id) }}" class="btn btn-success">
                             <i class="fa-solid fa-eye"></i> Dettagli
