@@ -54,6 +54,8 @@ class DisheController extends Controller
         if ($request->hasFile('image')) {
             $path = Storage::disk('public')->put('disheImg', $request->image);
             $dishe->image = $path;
+        } else {
+            $dishe->image = 'disheImg/dishe_default.jpeg';
         }
 
         $dishe->save();
