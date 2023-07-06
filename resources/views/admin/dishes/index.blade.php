@@ -24,7 +24,7 @@
                         <th scope="col">Descrizione</th>
                         <th scope="col">Prezzo €</th>
                         <th scope="col">Visibilità</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col">Azioni</th>
                     </tr>
                 </thead>
                 <tbody>
