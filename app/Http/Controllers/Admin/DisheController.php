@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateDisheRequest;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class DisheController extends Controller
 {
@@ -21,8 +22,14 @@ class DisheController extends Controller
     public function index()
     {
         $dishes = Dishe::where('restaurant_id', Auth::user()->restaurant->id)->get();
+        $shortDescription = [];
 
-        return view('admin.dishes.index', compact('dishes'));
+        foreach ($dishes as $dishe) {
+            $shortDescription[] = Str::limit($dishe->description , 10, '...');
+        } 
+
+
+        return view('admin.dishes.index', compact('dishes', 'shortDescription'));
     }
 
     /**
@@ -74,6 +81,7 @@ class DisheController extends Controller
 
         $userId = Auth::user()->id;
         $restaurant_id = Dishe::findOrFail($id)->restaurant_id;
+        
         if ($userId === $restaurant_id) {
             return view("admin.dishes.show", compact("dishe"));
         } else {
@@ -114,8 +122,6 @@ class DisheController extends Controller
         if ($request->hasFile('image')) {
             $path = Storage::disk('public')->put('disheImg', $request->image);
             $dishe->image = $path;
-        } else {
-            $dishe->image = 'disheImg/dishe_default.jpeg';
         }
 
         $dishe->update($data);
