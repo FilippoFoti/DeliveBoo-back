@@ -28,4 +28,26 @@ if (deleteBtns.length > 0) {
             deleteModal.show();
         });
     });
+};
+
+
+const image = document.getElementById("image");
+const imagePreview = document.getElementById("image-preview");
+// Se l'elemento è trovato
+if (image && imagePreview) {
+    // Al change del valore di image input
+    image.addEventListener("change", function () {
+        // prelevo il file selzionato
+        const selectedFile = this.files[0];
+
+        const reader = new FileReader();
+        reader.addEventListener("load", function () {
+            //      Metto il file nel src del elemento image-preview
+            //      Visualizzo l'immagine
+            imagePreview.src = reader.result;
+            imagePreview.classList.remove("d-none");
+        });
+
+        reader.readAsDataURL(selectedFile);
+    });
 }
