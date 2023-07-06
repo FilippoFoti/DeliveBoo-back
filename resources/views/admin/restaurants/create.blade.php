@@ -46,7 +46,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="vat_number" class="form-label">P. IVA *</label>
-                    <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="{{ old('vat_number') }}" required maxlength="13" placeholder="IT01234567890">
+                    <input type="text" class="form-control @error('vat_number') is-invalid @enderror" id="vat_number" name="vat_number" value="IT{{ old('vat_number') }}" required maxlength="13" placeholder="IT01234567890">
                     @error('vat_number')
                     <div class="invalid-feedback">
                         {{ $message }}
