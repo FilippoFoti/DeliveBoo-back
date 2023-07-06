@@ -18,7 +18,7 @@
         <div class="row border rounded p-4">
             <div class="col">
                 <figure>
-                    <img class="w-100" src="{{ asset('storage/' . auth()->user()->restaurant->image) }}" alt="Ristorante">
+                    <img class="w-100" src="{{ asset('storage/' . auth()->user()->restaurant->image) }}" alt="">
                 </figure>
             </div>
             <div class="col">
