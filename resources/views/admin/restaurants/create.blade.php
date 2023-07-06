@@ -13,7 +13,7 @@
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Nome Attività *</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required minlength="2" maxlength="50" placeholder="Insersci il nome del ristorante">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required minlength="2" maxlength="50" placeholder="Inserisci il nome del ristorante">
                     @error('name')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="address" class="form-label">Indirizzo *</label>
-                    <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" required minlength="5" maxlength="100" placeholder="Insersci l'indirizzo del ristorante">
+                    <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" required minlength="5" maxlength="100" placeholder="Inserisci l'indirizzo del ristorante">
                     @error('address')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -39,9 +39,14 @@
                     @enderror
                     <div id="phone-error" class="invalid-feedback d-block"></div>
                 </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label">Immagine</label>
-                    <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="">
+                <div class="col mb-3">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Immagine</label>
+                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="">
+                        <div class="mt-2">
+                            <img class="d-none w-25" id="image-preview" src="" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="vat_number" class="form-label">P. IVA *</label>
