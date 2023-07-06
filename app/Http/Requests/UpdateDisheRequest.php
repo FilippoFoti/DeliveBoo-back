@@ -25,7 +25,7 @@ class UpdateDisheRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:30', 'min:5'],
-            'price' => ['required', 'numeric', 'between:1, 25'],
+            'price' => ['required', 'numeric', 'between:1, 100'],
             'description' => ['required'],
             'visibility' => ['required', 'boolean'],
         ];

@@ -44,8 +44,13 @@
                 <div class="mb-3">
                     <label for="image" class="form-label">Immagine</label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="">
+                    <div class="mt-2">
+                        <img class="d-none w-25" id="image-preview" src="" alt="">
+                    </div>
                 </div>
+            </div>
 
+            <div class="col mb-3">
                 <label for="is_visible" class="form-label @error('is_visible') is-invalid @enderror">Visibile *</label>
                 <select id="is_visible" name="is_visible" class="form-select" required>
 
@@ -61,7 +66,7 @@
                 @enderror
             </div>
 
-            <div class="col-12 my-4 d-flex justify-content-center gap-4">
+            <div class="col mb-3 d-flex justify-content-center align-items-end gap-3">
                 <button type="submit" class="btn btn-primary">Salva</button>
                 <button type="reset" class="btn btn-danger">Cancella</button>
             </div>
