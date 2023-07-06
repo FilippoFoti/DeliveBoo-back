@@ -110,8 +110,15 @@ class DisheController extends Controller
     {
         $data = $request->validated();
         $dishe = Dishe::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $path = Storage::disk('public')->put('disheImg', $request->image);
+            $dishe->image = $path;
+        } else {
+            $dishe->image = 'disheImg/dishe_default.jpeg';
+        }
+
         $dishe->update($data);
-        // dd($dishe);
         return redirect()->route('admin.dishes.index')->with('message', "{$dishe->name} è stato modificato");
     }
 
