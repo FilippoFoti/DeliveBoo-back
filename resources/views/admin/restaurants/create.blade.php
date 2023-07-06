@@ -64,8 +64,7 @@
                         <p>Seleziona il tipo</p>
                         @foreach ($types as $type)
                             <div class="form-check">
-                                <input class="form-check-input" name="type_id[]" type="checkbox"
-                                    value="{{ $type->id }}" id="type-{{ $type->id }}">
+                                <input class="form-check-input @error('type_id') is-invalid @enderror" name="type_id[]" type="checkbox" value="{{ $type->id }}" id="type-{{ $type->id }}" @checked(in_array($type->id, old('type_id', [])))>
                                 <label class="form-check-label" for="type-{{ $type->id }}">
                                     {{ $type->name }}
                                 </label>
