@@ -39,9 +39,9 @@
                             <td class="align-middle">{{ $dishe->price }}</td>
                             <td class="align-middle">
                                 @if ($dishe->visibility === 1)
-                                    Si
+                                    <Span class="fw-bold text-success" >Si</Span>
                                 @else($dishe->visibility === 2)
-                                    No
+                                    <span class="fw-bold text-danger" >No</span>
                                 @endif
                             </td>
                             <td class="align-middle">
