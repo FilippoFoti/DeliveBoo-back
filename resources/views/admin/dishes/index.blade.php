@@ -22,8 +22,8 @@
                         <th scope="col">Anteprima</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Descrizione</th>
-                        <th scope="col">Prezzo</th>
-                        <th scope="col">Visivilità</th>
+                        <th scope="col">Prezzo €</th>
+                        <th scope="col">Visibilità</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
