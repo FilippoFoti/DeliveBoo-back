@@ -22,8 +22,8 @@
                 </div>
 
                 <div class="col mb-3">
-                    <label for="price" class="form-label">Prezzo *</label>
-                    <input type="number" required min="1" max="100"
+                    <label for="price" class="form-label">Prezzo * €</label>
+                    <input type="number" required min="0" max="100"
                         class="form-control @error('price') is-invalid @enderror" id="price" name="price"
                         value="{{ old('price', $dishe->price) }}">
                     @error('price')
