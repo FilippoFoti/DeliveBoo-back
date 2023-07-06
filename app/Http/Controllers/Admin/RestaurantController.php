@@ -57,6 +57,8 @@ class RestaurantController extends Controller
         if ($request->hasFile('image')) {
             $path = Storage::disk('public')->put('restaurantImg', $request->image);
             $restaurant->image = $path;
+        } else {
+            $restaurant->image = 'restaurantImg/default.jpeg';
         }
 
         $restaurant->save();
