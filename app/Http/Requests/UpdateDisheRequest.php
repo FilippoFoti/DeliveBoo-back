@@ -25,7 +25,7 @@ class UpdateDisheRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:30', 'min:5'],
-            'price' => ['required', 'numeric', 'between:1, 100'],
+            'price' => ['required', 'numeric', 'between:0, 100'],
             'description' => ['required'],
             'visibility' => ['required', 'boolean'],
         ];
@@ -38,7 +38,7 @@ class UpdateDisheRequest extends FormRequest
             'name.min' => 'Il nome del piatto è troppo corto. Deve contenere almeno 5 caratteri.',
             'price.required' => 'Il prezzo è obbligatorio.',
             'price.numeric' => 'Il prezzo deve essere un valore numerico.',
-            'price.between' => 'Il prezzo deve essere compreso tra 1 € e 25€.',
+            'price.between' => 'Il prezzo deve essere compreso tra 0 € e 100€.',
             'description.required' => 'La descrizione è obbligatoria.',
             'visibility.required' => 'La visibilità è obbligatoria.',
             'visibility.boolean' => 'Il valore di visibilità deve essere vero o falso.',
