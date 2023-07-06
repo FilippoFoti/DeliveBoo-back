@@ -25,7 +25,7 @@ class StoreDisheRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:30', 'min:5'],
-            'price' => ['required', 'between:1, 100', 'numeric'],
+            'price' => ['required', 'between:0, 100', 'numeric'],
             'description' => ['required'],
             'is_visible' => ['required'],
             'image' => ['nullable']

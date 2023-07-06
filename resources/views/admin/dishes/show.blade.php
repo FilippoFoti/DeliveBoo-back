@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><span class="fw-bold">Piatto: </span>{{ $dishe->name }}</h5>
                     <p class="card-text mb-2"><span class="fw-bold">Descrizione: </span>{{ $dishe->description }}</p>
-                    <p class="card-text mb-2"><span class="fw-bold">Prezzo: </span>{{ $dishe->price }}</p>
+                    <p class="card-text mb-2"><span class="fw-bold">Prezzo: € </span>{{ $dishe->price }}</p>
                     <p class="card-text mb-2"><span class="fw-bold">Visibilità: </span>{{ $dishe->visibility === 0 ? 'No' : 'Si' }}</p>
                     <a href="{{route('admin.dishes.edit', $dishe->id)}}" class="btn btn-primary">Modifica</a>
                 </div>
