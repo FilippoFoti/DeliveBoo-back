@@ -75,7 +75,6 @@
                             const form = document.getElementById('my-form');
                             const checkboxes = document.querySelectorAll('input[name="type_id[]"]');
                             const minRequired = 1;
-                            const maxAllowed = 3;
                             let checkedCount = 0;
 
                             checkboxes.forEach(function(checkbox) {
@@ -90,13 +89,9 @@
                                         checkedCount--;
                                     }
 
-                                    checkboxes.forEach(function(checkbox) {
-                                        checkbox.disabled = checkedCount >= maxAllowed && !checkbox.checked;
-                                    });
-
-                                    if (checkedCount < minRequired || checkedCount > maxAllowed) {
+                                    if (checkedCount < minRequired) {
                                         document.getElementById('type-error').textContent = 'Seleziona almeno ' +
-                                            minRequired + ' e al massimo ' + maxAllowed + ' tipi.';
+                                            minRequired + ' tipologia';
                                     } else {
                                         document.getElementById('type-error').textContent = '';
                                     }
@@ -104,10 +99,9 @@
                             });
 
                             form.addEventListener('submit', function(event) {
-                                if (checkedCount < minRequired || checkedCount > maxAllowed) {
+                                if (checkedCount < minRequired) {
                                     event.preventDefault();
-                                    document.getElementById('type-error').textContent = 'Seleziona almeno ' + minRequired +
-                                        ' e al massimo ' + maxAllowed + ' tipi.';
+                                    document.getElementById('type-error').textContent = 'Seleziona almeno ' + minRequired + ' tipologia';
                                 }
                             });
                         });
@@ -141,7 +135,7 @@
                     <p class="text-decoration-underline fw-bold">Tutti i campi contrassegnati con * sono
                         obbligatori</p>
                     <p class="m-0 fw-bold">Nota:</p>
-                    <p>E' necessario selezionare almeno una tipologia e massimo tre</p>
+                    <p>E' necessario selezionare almeno una tipologia</p>
                 </div>
             </form>
         </div>
