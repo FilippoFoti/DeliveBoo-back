@@ -20,10 +20,12 @@ class DisheTableSeeder extends Seeder
 
         foreach ($dishe_data as $dishe_item) {
             $dishe = new Dishe();
+            $dishe->restaurant_id = $dishe_item["restaurant_id"];
             $dishe->name = $dishe_item["name"];
             $dishe->price = $faker->randomFloat(2, 10, 30);;
-            $dishe->description = $faker->text();
+            $dishe->description = $dishe_item["description"];
             $dishe->visibility = $dishe_item["visibility"];
+            $dishe->image = $dishe_item["image"];
             $dishe->save();
         }
     }
