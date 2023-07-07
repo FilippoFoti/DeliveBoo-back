@@ -204,7 +204,7 @@ return [
       "icon" => "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ],
     [
-      "name" => "Kebab",
+      "name" => "Turca",
       "icon" => "https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ],
     [
