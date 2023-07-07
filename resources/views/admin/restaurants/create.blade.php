@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('scripts')
-    @vite(['resources/js/form.js'])
+    @vite(['resources/js/form_restaurant.js'])
 @endsection
 
 @section('content')

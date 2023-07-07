@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('scripts')
+    @vite(['resources/js/form_user.js'])
+@endsection
+
 @section('content')
 <div class="container mt-4">
     <div class="row justify-content-center">
@@ -16,7 +20,7 @@
                                 *</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus minlength="2" maxlength="50" pattern="[A-Za-z]+" placeholder="Inserisci il nome">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus minlength="2" maxlength="50" placeholder="Inserisci il nome">
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -31,7 +35,7 @@
                                 *</label>
 
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control @error('name') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus minlength="2" maxlength="50" pattern="[A-Za-z]+" placeholder="Inserisci il cognome">
+                                <input id="lastname" type="text" class="form-control @error('name') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus minlength="2" maxlength="50" placeholder="Inserisci il cognome">
                             </div>
                         </div>
 
@@ -89,27 +93,6 @@
                                 caratteri speciali</p>
                         </div>
                     </form>
-
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            const registerForm = document.getElementById('registerForm');
-                            const passwordInput = document.getElementById('password');
-                            const confirmPasswordInput = document.getElementById('password-confirm');
-
-                            function validatePasswords(event) {
-                                if (passwordInput.value !== confirmPasswordInput.value) {
-                                    event.preventDefault(); // Blocca l'invio del form
-                                    confirmPasswordInput.setCustomValidity('Le password non coincidono');
-                                } else {
-                                    confirmPasswordInput.setCustomValidity(''); // Ripristina il messaggio di errore personalizzato
-                                }
-                            }
-                            registerForm.addEventListener('submit', validatePasswords);
-                            confirmPasswordInput.addEventListener('input', validatePasswords);
-                        });
-                    </script>
-
-
                 </div>
             </div>
         </div>
