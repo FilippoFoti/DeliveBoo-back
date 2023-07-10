@@ -34,7 +34,7 @@ return [
     [
       "name" => "Gino Sorbillo",
       "image" =>
-      "https://www.sorbillo.it/wp-content/uploads/2023/01/Sorbillo-Gino-Toto-Bio-dal-1935-142x90-1.svg",
+      "https://thumbs.dreamstime.com/z/logo-sorbillo-della-pizzeria-pi%C3%B9-importante-del-mondo-169971641.jpg",
     ],
     [
       "name" => "Rossopomodoro",
