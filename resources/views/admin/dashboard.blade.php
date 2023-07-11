@@ -46,7 +46,8 @@
         <div class="row">
             <div class="col py-4">
                 <div class="text-center">
-                    <h1>Registra il tuo ristorante</h1>
+                    <h1 class="text-center mt-3">Benvenuto {{ Auth::user()->name }}</h1>
+                    <h1 class="text-center my-3">Non hai ancora registrato il tuo ristorante, fallo subito!</h1>
                     <a href="{{ route('admin.restaurants.create') }}" class="btn btn-success">Nuovo ristorante</a>
                 </div>
             </div>
