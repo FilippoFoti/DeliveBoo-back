@@ -39,7 +39,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Telefono *</label>
+                        <label for="phone" class="form-label">Telefono cellulare *</label>
                         <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone"
                             name="phone" value="+39{{ old('phone') }}" required maxlength="13"
                             placeholder="Inserisci il numero di telefono">
