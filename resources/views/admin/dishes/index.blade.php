@@ -5,6 +5,7 @@
     @if (session('message'))
     <div class="alert alert-success m-0">
         {{ session('message') }}
+<<<<<<< HEAD
     </div>
     @endif
 </div>
@@ -19,6 +20,19 @@
     <div class="alert alert-info text-center">Nessun piatto trovato, aggiungine uno!</div>
     @else
     <div class="row row-cols-3">
+=======
+    </div>
+    @endif
+</div>
+{{-- @include('partials.session_message') --}}
+<div class="container">
+    <h1 class="pt-3 pb-1 text-center m-0">I tuoi prodotti</h1>
+    <div class="text-end m-3">
+        <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Crea un Piatto</a>
+    </div>
+    <div class="row row-cols-3">
+
+>>>>>>> fixes
         <table class="table">
             <thead>
                 <tr class="text-center">
@@ -31,11 +45,17 @@
                 </tr>
             </thead>
             <tbody>
+<<<<<<< HEAD
                 @foreach ($dishes->sortBy(function ($dish) {
                 return strtolower($dish->name);
                 }) as $key => $dishe)
                 <tr class="text-center">
                     <td style="width: 10%" class="align-middle">
+=======
+                @foreach ($dishes as $key => $dishe)
+                <tr class="text-center @if ($dishe->visibility === 1) bg-secondary-subtle @endif" style="--bs-table-bg: none !important;--bs-bg-opacity: .5;">
+                    <td style=" width: 10%" class="align-middle">
+>>>>>>> fixes
                         <img style="width: 100%" src="{{ asset('storage/' . $dishe->image) }}" alt="{{ $dishe->name }}">
                     </td>
                     <td class="align-middle">{{ $dishe->name }}</td>
@@ -43,9 +63,15 @@
                     <td class="align-middle">{{ $dishe->price }}</td>
                     <td class="align-middle">
                         @if ($dishe->visibility === 1)
+<<<<<<< HEAD
                         <Span class="fw-bold text-success">Si</Span>
                         @else($dishe->visibility === 2)
                         <span class="fw-bold text-danger">No</span>
+=======
+                        <span class="fw-bold">Si</span>
+                        @else
+                        <span class="fw-bold">No</span>
+>>>>>>> fixes
                         @endif
                     </td>
                     <td class="align-middle">
@@ -68,8 +94,11 @@
             </tbody>
         </table>
     </div>
+<<<<<<< HEAD
     @endif
 
+=======
+>>>>>>> fixes
     @include('partials.delete')
 </div>
 @endsection
