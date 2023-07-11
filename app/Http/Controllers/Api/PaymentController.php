@@ -33,13 +33,13 @@ class PaymentController extends Controller
                 'message' => 'Transazione approvata',
                 'success' => true
             ];
-            return response()->json($data, 200);
+            return response()->json($data);
         } else {
             $data = [
                 'message' => 'Transazione rifiutata',
                 'success' => false
             ];
-            return response()->json($data, 400);
+            return response()->json($data);
         }
     }
 }
