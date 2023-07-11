@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Registrati') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" id="registerForm">
@@ -89,8 +89,7 @@
                             <p class="text-decoration-underline fw-bold">Tutti i campi contrassegnati con * sono
                                 obbligatori</p>
                             <p class="m-0 fw-bold">Nota:</p>
-                            <p>Il Nome e Cognome devono contenere solo lettere minuscole e maiuscole senza spazi o
-                                caratteri speciali</p>
+                            <p>Il Nome e Cognome devono contenere solo lettere minuscole e maiuscole, senza caratteri speciali</p>
                         </div>
                     </form>
                 </div>
