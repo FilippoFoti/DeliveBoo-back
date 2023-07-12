@@ -86,10 +86,8 @@
                         </div>
 
                         <div class="alert alert-warning">
-                            <p class="text-decoration-underline fw-bold">Tutti i campi contrassegnati con * sono
+                            <p class="text-decoration-underline fw-bold text-center">Tutti i campi contrassegnati con * sono
                                 obbligatori</p>
-                            <p class="m-0 fw-bold">Nota:</p>
-                            <p>Il Nome e Cognome devono contenere solo lettere minuscole e maiuscole, senza caratteri speciali</p>
                         </div>
                     </form>
                 </div>
