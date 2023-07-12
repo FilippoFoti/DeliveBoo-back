@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Dishe;
+use App\Models\DisheOrder;
 use App\Models\Order;
 use Braintree\Gateway;
+use DateTime;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -42,10 +44,20 @@ class PaymentController extends Controller
         ]);
 
         if ($result->success) {
-            $order = new Order();
+            $data['payment_status'] = 1;
             $data['total_price'] = $amount;
+            $data['date'] = new DateTime();
+            $order = new Order();
             $order->fill($data);
             $order->save();
+
+            foreach ($cart as $item) {
+                $disheOrder = new DisheOrder();
+                $disheOrder->dish_id = $item['id'];
+                $disheOrder->order_id = $order->id;
+                $disheOrder->quantity = $item['count'];
+                $disheOrder->save();
+            }
         }
         // $result = $gateway->transaction()->sale([
         //     'amount' => $request->amount,

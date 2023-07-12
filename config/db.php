@@ -197,23 +197,23 @@ return [
   "types" => [
     [
       "name" => "Italiana",
-      "icon" => "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "icon" => "https://images.pexels.com/photos/708587/pexels-photo-708587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     ],
     [
       "name" => "Americana",
-      "icon" => "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "icon" => "https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=800"
     ],
     [
       "name" => "Turca",
-      "icon" => "https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "icon" => "https://images.pexels.com/photos/7866189/pexels-photo-7866189.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     ],
     [
       "name" => "Cinese",
-      "icon" => "https://images.pexels.com/photos/5409009/pexels-photo-5409009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "icon" => "https://images.pexels.com/photos/12955612/pexels-photo-12955612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     ],
     [
       "name" => "Messicana",
-      "icon" => "https://images.pexels.com/photos/14979836/pexels-photo-14979836/free-photo-of-piatto-delizioso-burrito-gustoso.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "icon" => "https://images.pexels.com/photos/4968309/pexels-photo-4968309.jpeg"
     ],
   ]
 ];
