@@ -15,7 +15,6 @@
         <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Crea un Piatto</a>
     </div>
     <div class="row row-cols-3">
-
         <table class="table">
             <thead>
                 <tr class="text-center">
@@ -26,10 +25,12 @@
                     <th scope="col">Visibilità</th>
                     <th scope="col">Azioni</th>
                 </tr>
+
             </thead>
             <tbody>
+
                 @foreach ($dishes as $key => $dishe)
-                <tr class="text-center @if ($dishe->visibility === 1) bg-secondary-subtle @endif" style="--bs-table-bg: none !important;--bs-bg-opacity: .5;">
+                <tr class="text-center @if ($dishe->visibility === 0) bg-secondary-subtle @endif" style="--bs-table-bg: none !important;--bs-bg-opacity: .5;">
                     <td style=" width: 10%" class="align-middle">
                         <img style="width: 100%" src="{{ asset('storage/' . $dishe->image) }}" alt="{{ $dishe->name }}">
                     </td>
@@ -60,8 +61,14 @@
                     </td>
                 </tr>
                 @endforeach
+
             </tbody>
         </table>
+        @if (empty($dishe))
+        <div class="bg-warning p-2 d-block text-center w-100">
+            <span>Nessun piatto trovato, aggiungine subito uno!</span>
+        </div>
+        @endif
     </div>
     @include('partials.delete')
 </div>
