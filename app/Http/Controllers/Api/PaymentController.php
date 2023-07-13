@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Dishe;
 use App\Models\DisheOrder;
 use App\Models\Order;
-use App\Mail\NewOrder;
 use Braintree\Gateway;
 use DateTime;
 use Illuminate\Http\Request;
@@ -27,9 +26,11 @@ class PaymentController extends Controller
     public function makePayment(Request $request, Gateway $gateway)
     {
         $data = $request->all();
+        // return response()->json($data, 200);
         $amount = 0;
 
         $cart = $data['cart'];
+
 
         foreach ($cart as $item) {
             $dishe = Dishe::where('id', $item['id'])->first();
@@ -45,6 +46,7 @@ class PaymentController extends Controller
         ]);
 
         if ($result->success) {
+
             $data['payment_status'] = 1;
             $data['total_price'] = $amount;
             $data['date'] = new DateTime();
@@ -54,17 +56,12 @@ class PaymentController extends Controller
 
             foreach ($cart as $item) {
                 $disheOrder = new DisheOrder();
-                $disheOrder->dish_id = $item['id'];
+                $disheOrder->dishe_id = $item['id'];
                 $disheOrder->order_id = $order->id;
                 $disheOrder->quantity = $item['count'];
                 $disheOrder->save();
             }
         }
-
-        // email all'admin con avviso del nuovo ordine
-        // Mail::to('admin@deliveboo.com')->send(new NewOrder($order));
-
-
         // $result = $gateway->transaction()->sale([
         //     'amount' => $request->amount,
         //     'paymentMethodNonce' => $request->token,
