@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Dishe;
 use App\Models\DisheOrder;
 use App\Models\Order;
+use App\Mail\NewOrder;
 use Braintree\Gateway;
 use DateTime;
 use Illuminate\Http\Request;
@@ -59,6 +60,11 @@ class PaymentController extends Controller
                 $disheOrder->save();
             }
         }
+
+        // email all'admin con avviso del nuovo ordine
+        // Mail::to('admin@deliveboo.com')->send(new NewOrder($order));
+
+
         // $result = $gateway->transaction()->sale([
         //     'amount' => $request->amount,
         //     'paymentMethodNonce' => $request->token,
