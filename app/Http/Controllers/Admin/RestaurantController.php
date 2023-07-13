@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use App\Models\Type;
+use App\Mail\NewOrder;
+use App\Mail\NewRestaurant;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRestaurantRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
 
 class RestaurantController extends Controller
 {
@@ -62,7 +65,12 @@ class RestaurantController extends Controller
         }
 
         $restaurant->save();
+
+        // email all'admin con avviso del nuovo ordine
+        Mail::to('admin@deliveboo.com')->send(new NewRestaurant($restaurant));
+
         $typeIds = $request->input('type_id');
+
         $types = Type::whereIn('id', $typeIds)->get();
 
         $restaurant->types()->sync($types);
