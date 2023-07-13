@@ -21,12 +21,12 @@ class DisheController extends Controller
      */
     public function index()
     {
-        $dishes = Dishe::where('restaurant_id', Auth::user()->restaurant->id)->get();
+        $dishes = Dishe::where('restaurant_id', Auth::user()->restaurant->id)->orderByRaw("LOWER(name)")->get();
         $shortDescription = [];
 
         foreach ($dishes as $dishe) {
-            $shortDescription[] = Str::limit($dishe->description , 10, '...');
-        } 
+            $shortDescription[] = Str::limit($dishe->description, 10, '...');
+        }
 
 
         return view('admin.dishes.index', compact('dishes', 'shortDescription'));
@@ -81,7 +81,7 @@ class DisheController extends Controller
 
         $userId = Auth::user()->id;
         $restaurant_id = Dishe::findOrFail($id)->restaurant_id;
-        
+
         if ($userId === $restaurant_id) {
             return view("admin.dishes.show", compact("dishe"));
         } else {
