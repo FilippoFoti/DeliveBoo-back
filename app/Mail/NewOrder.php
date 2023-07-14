@@ -21,7 +21,7 @@ class NewOrder extends Mailable
      * @return void
      */
     public function __construct($order)
-    {
+    {   
         $this->order = $order;
     }
 

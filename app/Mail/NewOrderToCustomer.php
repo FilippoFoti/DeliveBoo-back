@@ -13,14 +13,16 @@ class NewOrderToCustomer extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $disheorder;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($disheorder)
     {
-        //
+        $this->disheorder = $disheorder;
     }
 
     /**
@@ -31,7 +33,7 @@ class NewOrderToCustomer extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'New Order To Customer',
+            subject: 'Congratulazioni! il tuo ordine sta arrivando :-)',
         );
     }
 
