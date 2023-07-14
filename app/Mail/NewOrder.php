@@ -20,9 +20,9 @@ class NewOrder extends Mailable
      *
      * @return void
      */
-    public function __construct($_order)
+    public function __construct($order)
     {
-        $this->order = $_order;
+        $this->order = $order;
     }
 
     /**

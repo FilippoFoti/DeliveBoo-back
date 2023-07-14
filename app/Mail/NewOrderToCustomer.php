@@ -5,25 +5,22 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use App\Http\Controllers\Admin\RestaurantController;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class NewRestaurant extends Mailable
+class NewOrderToCustomer extends Mailable
 {
     use Queueable, SerializesModels;
-
-    public $restaurant;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($_restaurant)
+    public function __construct()
     {
-        $this->restaurant = $_restaurant;
+        //
     }
 
     /**
@@ -34,7 +31,7 @@ class NewRestaurant extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'New Restaurant',
+            subject: 'New Order To Customer',
         );
     }
 
@@ -46,7 +43,7 @@ class NewRestaurant extends Mailable
     public function content()
     {
         return new Content(
-            view: 'emails.new-order-email',
+            view: 'view.name',
         );
     }
 
