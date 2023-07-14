@@ -66,8 +66,6 @@ class RestaurantController extends Controller
 
         $restaurant->save();
 
-        // email all'admin con avviso del nuovo ordine
-        // Mail::to('admin@deliveboo.com')->send(new NewRestaurant($restaurant));
 
         $typeIds = $request->input('type_id');
 
