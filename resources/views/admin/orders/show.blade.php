@@ -26,5 +26,7 @@
 
     </tr>
   </table>
+  <a href="{{ route('admin.orders.index') }}" class="btn btn-warning">Indietro
+  </a>
 </div>
 @endsection
