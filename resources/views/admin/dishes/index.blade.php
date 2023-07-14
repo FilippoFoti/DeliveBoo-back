@@ -13,6 +13,7 @@
     <h1 class="pt-3 pb-1 text-center m-0">I tuoi prodotti</h1>
     <div class="text-end m-3">
         <a href="{{ route('admin.dishes.create') }}" class="btn btn-primary">Crea un Piatto</a>
+        <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">Torna alla dashboard</a>
     </div>
     <div class="row row-cols-3">
         <table class="table">

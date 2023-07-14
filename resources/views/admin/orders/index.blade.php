@@ -19,7 +19,7 @@
         </thead>
         <tbody>
 
-          @foreach ($orders as $order)
+          @foreach ($ordersDesc as $order)
           <tr class="text-center">
             <td class="align-middle">{{ $order->id }}</td>
             <td class="align-middle">{{ \Carbon\Carbon::parse($order->date)->format('d-m-Y') }}</td>
