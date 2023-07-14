@@ -65,7 +65,7 @@ class PaymentController extends Controller
                 $disheOrder->quantity = $item['count'];
                 $disheOrder->save();
                 Mail::to('admin@deliveboo.com')->send(new NewOrder($order));
-                Mail::to($order->email)->send(new NewOrderToCustomer($disheOrder));
+                Mail::to($order->email)->send(new NewOrderToCustomer($disheOrder, $order));
             }
         }
         // $result = $gateway->transaction()->sale([

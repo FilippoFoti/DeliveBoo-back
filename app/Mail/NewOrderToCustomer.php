@@ -14,15 +14,17 @@ class NewOrderToCustomer extends Mailable
     use Queueable, SerializesModels;
 
     public $disheorder;
+    public $order;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($disheorder)
+    public function __construct($disheorder,$order)
     {
         $this->disheorder = $disheorder;
+        $this->order = $order;
     }
 
     /**
