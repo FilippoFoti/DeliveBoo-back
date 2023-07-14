@@ -10,6 +10,7 @@ use Braintree\Gateway;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Mail\NewOrder;
+use App\Mail\NewOrderToCustomer;
 use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
@@ -64,6 +65,7 @@ class PaymentController extends Controller
                 $disheOrder->quantity = $item['count'];
                 $disheOrder->save();
                 Mail::to('admin@deliveboo.com')->send(new NewOrder($order));
+                Mail::to($order->email)->send(new NewOrderToCustomer($disheOrder));
             }
         }
         // $result = $gateway->transaction()->sale([

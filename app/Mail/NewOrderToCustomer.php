@@ -45,7 +45,7 @@ class NewOrderToCustomer extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.new-order-email-customer',
         );
     }
 
