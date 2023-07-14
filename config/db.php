@@ -85,14 +85,16 @@ return [
       "restaurant_id" => 3,
       "name" => "Double Colonel's Burger",
       "description" => "Il Double Colonel’s Burger ha due filetti di pollo preparati con la ricetta segreta Original: così buono buono il doppio doppio.",
-      "image" => "https://media.engage.it/2023/4/kfc-italia-doublecolonel_734519.jpg",
+      // "image" => "https://media.engage.it/2023/4/kfc-italia-doublecolonel_734519.jpg",
+      "image" => "https://media.imagonist.com/products/products/312_view_it.png?v=1688399201",
       "visibility" => true
     ],
     [
       "restaurant_id" => 3,
       "name" => "Double Krunch",
       "description" => "La morbida croccantezza raddoppia con 2 Tender Crispy! Pane con semi di sesamo, due Tender Crispy, insalata, cheddar e salsa al pepe nero.",
-      "image" => "https://www.laurabustarviejo.com/wp-content/uploads/2017/05/Nuevo-Double-Krunch-KFC.jpg",
+      // "image" => "https://www.laurabustarviejo.com/wp-content/uploads/2017/05/Nuevo-Double-Krunch-KFC.jpg",
+      "image" => "https://media.imagonist.com/products/products/282_view_it.png?v=1688397846",
       "visibility" => true
     ],
     [
