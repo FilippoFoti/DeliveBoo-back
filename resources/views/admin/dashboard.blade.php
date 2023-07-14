@@ -38,6 +38,7 @@
                     @endforeach
                 </h5>
                 <a href="{{ route('admin.dishes.index') }}" class="btn btn-primary">Menù</a>
+                <a href="{{ route('admin.orders.index') }}" class="btn btn-primary">Riepilogo Ordini</a>
             </div>
         </div>
     </div>
