@@ -54,4 +54,10 @@ class OrderController extends Controller
             return view("admin.orders.show", compact("order", "disheOrder", "dishes_price"));
         }
     }
+
+    public function charts(){
+        $restaurant = auth()->user()->restaurant;
+        $dishes = Dishe::where('restaurant_id', $restaurant->id)->with('orders')->get();
+        return view('admin.orders.index', compact('dishes', 'restaurant'));
+    }
 }
