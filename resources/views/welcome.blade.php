@@ -15,10 +15,4 @@
         {{-- <a href="https://packagist.org/packages/pacificdev/laravel_9_preset" class="btn btn-primary btn-lg" type="button">Documentation</a> --}}
     </div>
 </div>
-
-<div class="content">
-    <div class="container">
-        <p>Qui non so cosa scrivere quindi... Ciao!</p>
-    </div>
-</div>
 @endsection
