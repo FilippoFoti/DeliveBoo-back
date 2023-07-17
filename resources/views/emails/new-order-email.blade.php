@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <style>
         body {
@@ -9,7 +10,7 @@
             margin: 0;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -18,17 +19,17 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
             color: #333;
         }
-        
+
         p {
             margin-bottom: 10px;
         }
-        
+
         .button {
             display: inline-block;
             background-color: #4CAF50;
@@ -38,7 +39,7 @@
             border-radius: 5px;
             margin-top: 15px;
         }
-        
+
         .footer {
             margin-top: 30px;
             color: #888;
@@ -46,6 +47,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Ordine Ricevuto</h1>
@@ -73,10 +75,10 @@
                 <strong>Totale Eur:</strong> {{ $order->total_price }}
             </li>
         </ul>
-        
-        <strong>Totale Eur:</strong> {{ $order->total_price }}
-        
-        
+
+        <strong>Totale Eur:</strong> {{ $order->total_price }} €
+
+
         <div class="footer">
             <p>Grazie,</p>
             <p>Il Team DeliveBoo</p>
@@ -84,13 +86,14 @@
         </div>
     </div>
 </body>
+
 </html>
 
 
 
 
 
-{{-- 
+{{--
 <h1>
     Ciao Admin,
 </h1>
@@ -99,20 +102,20 @@
 <ul>
     <li style="margin-bottom: 10px;">
         <strong>Nome:</strong> {{ $order->customer_name }}
-    </li>
-    <li style="margin-bottom: 10px;">
-        <strong>Cognome:</strong> {{ $order->customer_lastname }}
-    </li>
-    <li style="margin-bottom: 10px;">
-        <strong>Email:</strong> {{ $order->email }}
-    </li>
-    <li style="margin-bottom: 10px;">
-        <strong>Indirizzo:</strong> {{ $order->address }}
-    </li>
-    <li style="margin-bottom: 10px;">
-        <strong>Telefono:</strong> {{ $order->phone }}
-    </li>
-    <li style="margin-bottom: 10px;">
-        <strong>Totale Eur:</strong> {{ $order->total_price }}
-    </li>
+</li>
+<li style="margin-bottom: 10px;">
+    <strong>Cognome:</strong> {{ $order->customer_lastname }}
+</li>
+<li style="margin-bottom: 10px;">
+    <strong>Email:</strong> {{ $order->email }}
+</li>
+<li style="margin-bottom: 10px;">
+    <strong>Indirizzo:</strong> {{ $order->address }}
+</li>
+<li style="margin-bottom: 10px;">
+    <strong>Telefono:</strong> {{ $order->phone }}
+</li>
+<li style="margin-bottom: 10px;">
+    <strong>Totale Eur:</strong> {{ $order->total_price }}
+</li>
 </ul> --}}

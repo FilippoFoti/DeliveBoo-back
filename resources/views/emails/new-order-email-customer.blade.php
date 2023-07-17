@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Conferma ordine</title>
     <style>
@@ -10,7 +11,7 @@
             margin: 0;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -19,17 +20,17 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
             color: #333;
         }
-        
+
         p {
             margin-bottom: 10px;
         }
-        
+
         .button {
             display: inline-block;
             background-color: #4CAF50;
@@ -39,7 +40,7 @@
             border-radius: 5px;
             margin-top: 15px;
         }
-        
+
         .footer {
             margin-top: 30px;
             color: #888;
@@ -47,6 +48,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Conferma Ordine</h1>
@@ -54,17 +56,17 @@
         <p>Grazie per aver effettuato un ordine presso il nostro negozio.</p>
 
         <p>L'ordine è stato registrato correttamente.</p>
-        
+
         <h2>Riepilogo dell'ordine:</h2>
         <ul>
             @foreach($order->dishes as $dishe)
-                <li>{{ $dishe->name }}</li>
+            <li>{{ $dishe->name }}</li>
             @endforeach
         </ul>
-        
-        <strong>Totale Eur:</strong> {{ $order->total_price }}
-        
-        
+
+        <strong>Totale Eur:</strong> {{ $order->total_price }} €
+
+
         <div class="footer">
             <p>Grazie,</p>
             <p>Il Team DeliveBoo</p>
@@ -72,10 +74,11 @@
         </div>
     </div>
 </body>
+
 </html>
 
 
-{{-- 
+{{--
 <h1> Hey {{$order->customer_name }} </h1>
 
 <p>Grazie per aver effettuato l'ordine!</p>
@@ -86,8 +89,8 @@
 
 <ul>
     @foreach($order->dishes as $dishe)
-        <li>{{ $dishe->name }} <br> <span>Quantità:</span> x
-    @endforeach
+    <li>{{ $dishe->name }} <br> <span>Quantità:</span> x
+        @endforeach
 </ul>
 
 
