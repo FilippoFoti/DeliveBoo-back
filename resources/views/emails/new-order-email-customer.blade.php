@@ -58,7 +58,7 @@
         <h2>Riepilogo dell'ordine:</h2>
         <ul>
             @foreach($order->dishes as $dishe)
-                <li>{{ $dishe->name }} <br> <span>Quantità:</span> x
+                <li>{{ $dishe->name }}</li>
             @endforeach
         </ul>
         
