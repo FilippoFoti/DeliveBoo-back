@@ -72,7 +72,7 @@
                 <strong>Telefono:</strong> {{ $order->phone }}
             </li>
             <li style="margin-bottom: 10px;">
-                <strong>Totale Eur:</strong> {{ $order->total_price }}
+                <strong>Totale:</strong> {{ $order->total_price }} €
             </li>
         </ul>
 

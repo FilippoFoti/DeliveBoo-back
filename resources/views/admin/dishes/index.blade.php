@@ -22,7 +22,7 @@
                     <th scope="col">Anteprima</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Descrizione</th>
-                    <th scope="col">Prezzo €</th>
+                    <th scope="col">Prezzo</th>
                     <th scope="col">Visibilità</th>
                     <th scope="col">Azioni</th>
                 </tr>
@@ -37,7 +37,7 @@
                     </td>
                     <td class="align-middle">{{ $dishe->name }}</td>
                     <td class="align-middle">{{ $shortDescription[$key] }}</td>
-                    <td class="align-middle">{{ $dishe->price }}</td>
+                    <td class="align-middle">{{ $dishe->price }} €</td>
                     <td class="align-middle">
                         @if ($dishe->visibility === 1)
                         <span class="fw-bold" style="color: green">Si</span>
