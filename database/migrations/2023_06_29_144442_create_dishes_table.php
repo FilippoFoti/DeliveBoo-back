@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 30);
+            $table->string('name');
             $table->Decimal('price', 5, 2)->unsigned();
             $table->text('description');
             $table->boolean('visibility');

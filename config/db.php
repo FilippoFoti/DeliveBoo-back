@@ -9,7 +9,7 @@ return [
     [
       "name" => "Burger King",
       "image" =>
-      "https://i0.wp.com/www.fruitbookmagazine.it/wp-content/uploads/2021/01/burger-king-rebranding.jpg?fit=1200%2C630&ssl=1",
+      "https://azfranchising.com/wp-content/uploads/2019/11/burger-king-1030x684.jpg",
     ],
     [
       "name" => "KFC",
@@ -34,22 +34,22 @@ return [
     [
       "name" => "Gino Sorbillo",
       "image" =>
-      "https://thumbs.dreamstime.com/z/logo-sorbillo-della-pizzeria-pi%C3%B9-importante-del-mondo-169971641.jpg",
+      "https://www.pizzanapoletana.org/public/assoc/4116200400181a.jpg",
     ],
     [
       "name" => "Rossopomodoro",
       "image" =>
-      "https://www.romaest.cc/fileadmin/user_upload/GLOBAL/brand_stores/logos/rossopomodoro.jpg",
+      "https://www.centrocommercialecurno.it/wp-content/uploads/2019/11/rossopomodoro.jpg",
     ],
     [
       "name" => "Sushiko",
       "image" =>
-      "https://sushiko.it/wp-content/uploads/2022/01/Logo-Sushiko.png",
+      "https://tb-static.uber.com/prod/image-proc/processed_images/91ec91a656e073dc6d554f1c79c1bee2/c73ecc27d2a9eaa735b1ee95304ba588.jpeg",
     ],
     [
       "name" => "Wakame",
       "image" =>
-      "https://wakameitalia.it/wp-content/uploads/2020/04/riduzione-logo-wakame-selection.png",
+      "https://www.comunicaffe.it/wp-content/uploads/2018/07/wagamama-2.jpg",
     ]
   ],
   "dishes" => [
@@ -68,6 +68,48 @@ return [
       "visibility" => true
     ],
     [
+      "restaurant_id" => 1,
+      "name" => "McChicken Mediterraneo",
+      "description" => "Un assaggio a McChicken® Mediterraneo e ti conquisterà con il suo mix di sapori: salsa alle olive e capperi italiani, pomodoro, mozzarella e l’inconfondibile 100% petto di pollo italiano.",
+      "image" => "https://www.mcdonalds.it/sites/default/files/styles/product_isolated_preview/public/products/mediterraneo--isolated.png?itok=DT0CyDwk",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 1,
+      "name" => "McChicken Pesto Rosso",
+      "description" => "Basterà un morso per farti sorprendere dalla sua combinazione di ingredienti: bacon croccante, salsa al pesto rosso con pomodori secchi e Grana Padano DOP e l’immancabile 100% petto di pollo italiano.",
+      "image" => "https://www.mcdonalds.it/sites/default/files/styles/product_isolated_preview/public/products/pesto-rosso--isolated.png?itok=cclAPBqW",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 1,
+      "name" => "Gran Crispy McBacon",
+      "description" => "Chi ama il Crispy McBacon® ne prenderebbe volentieri un altro e un altro e un altro e un altro ancora. Per questo c’è il Gran Crispy McBacon®: panino con carne 100% bovina da allevamenti italiani, croccante bacon 100% da pancetta italiana, formaggio e l'inconfondibile salsa Crispy. Come il classico, ma ancora più grande.",
+      "image" => "https://www.mcdonalds.it/sites/default/files/styles/product_isolated_preview/public/products/gran-crispy-mcbacon--hero-isolated_1.png?itok=jf3BORkE",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 1,
+      "name" => "My Selection Chicken",
+      "description" => "100% petto di pollo italiano avvolto in una croccante panatura, Caciocavallo Silano DOP, salsa avocado, cavolo cappuccio rosso italiano e bacon.",
+      "image" => "https://www.mcdonalds.it/sites/default/files/styles/product_isolated_preview/public/products/myselection-chicken-avocado--isolated.png?itok=TzX8qEyY",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 1,
+      "name" => "My Selection BBQ",
+      "description" => "180G di succosa carne bovina da allevamenti italiani, gouda stagionato, bacon croccante, insalata, coleslaw e salsa BBQ con Aceto Balsamico di Modena IGP.",
+      "image" => "https://www.mcdonalds.it/sites/default/files/styles/product_isolated_preview/public/products/mys-bbq--hero-isolated.png?itok=_X1VHjgk",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 1,
+      "name" => "Crispy McBacon",
+      "description" => "Carne 100% bovina da allevamenti italiani, croccante bacon 100% da pancetta italiana e formaggio, accompagnati dall'inconfondibile salsa Crispy. Non serve altro per incoronare Crispy McBacon® re della croccantezza e del gusto. Un Grande Classico che non tramonterà mai.",
+      "image" => "https://www.mcdonalds.it/sites/default/files/styles/product_isolated_preview/public/products/crispy-mcbacon--hero-isolated_3.png?itok=m9TU-ZY0",
+      "visibility" => true
+    ],
+    [
       "restaurant_id" => 2,
       "name" => "Bacon King 3.0",
       "description" => "L'evoluzione del Bacon King: 3 strati di carne alla griglia, 3 strati di formaggio e 8 fette di delizioso bacon.",
@@ -76,9 +118,51 @@ return [
     ],
     [
       "restaurant_id" => 2,
+      "name" => "Bronx Steakhouse",
+      "description" => "Un gusto irresistibile per veri amanti dei panini super farciti. 175 grammi di carne di manzo alla griglia e tutti gli ingredienti più amati: bacon, gustoso formaggio cheddar, cipolle croccanti, insalata, pomodoro, salsa BBQ e maionese. Il tutto racchiuso in un soffice pane al mais.",
+      "image" => "https://www.burgerking.it/site/assets/files/8949396/bronx_steakhouse.png",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 2,
+      "name" => "Big King",
+      "description" => "Il re degli hamburger è qui. Il nostro BIG KING® ti conquisterà con doppia carne di manzo alla griglia, formaggio e deliziosa salsa BIG KING®. Un hamburger decisamente maestoso, che, con i suoi 4 pollici di diametro, rende merito al proprio nome.",
+      "image" => "https://www.burgerking.it/site/assets/files/1856/big_king_nueva.png",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 2,
+      "name" => "Whopper",
+      "description" => "La ricetta del leggendario WHOPPER® non è cambiata. La succosa carne di manzo alla griglia e gli ingredienti freschi ti garantiscono un sapore ineguagliabile. Naturalmente viene sempre preparato al momento per te - proprio come ti piace di più. È bello che certe cose non cambino mai.",
+      "image" => "https://www.burgerking.it/site/assets/files/1046/whopper.png",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 2,
       "name" => "Grilled Chicken Royale",
       "description" => "Panino con petto di pollo grigliato Fileni 100% Italiano, il mix perfetto per chi vuole consumare cibo genuino senza rinunciare al gusto! I polli sono allevati a terra e vengono nutriti con alimenti 100% italiani.",
       "image" => "https://www.burgerking.it/site/assets/files/9008273/app_kiosk_burger_transp.png",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 2,
+      "name" => "Wrap con Pollo Grigliato",
+      "description" => "Wrap con petto di pollo grigliato Fileni 100% Italiano, il mix perfetto per chi vuole consumare cibo genuino senza rinunciare al gusto! I polli sono allevati a terra e vengono nutriti con alimenti 100% italiani. L'abbinamento con la lattuga, il pomodoro e la maionese contribuiscono a rendere questo wrap super gustoso!",
+      "image" => "https://www.burgerking.it/site/assets/files/7728232/app_kiosk_salad_transp-1.png",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 2,
+      "name" => "Chicken Royale",
+      "description" => "Certe cose non bastano mai - un buon sapore, per esempio. Ecco perché per il tuo Chicken Royal® usiamo solo il nostro panino al sesamo extralungo, con pollo avvolto da una saporita impanatura dorata. Mmmh... con questo gusto delizioso nessuno rimarrà a bocca asciutta.",
+      "image" => "https://www.burgerking.it/site/assets/files/1912/chicken_royale.png",
+      "visibility" => true
+    ],
+    [
+      "restaurant_id" => 2,
+      "name" => "Crunchicken",
+      "description" => "Pollo croccante, pomodoro, lattuga e doppia maionese, racchiusi in un morbido pane al mais. Vieni a provare il nostro nuovo Crunchicken. Un pollo così non l'hai mai sentito!",
+      "image" => "https://www.burgerking.it/site/assets/files/8802859/crunchicken.png",
       "visibility" => true
     ],
     [
